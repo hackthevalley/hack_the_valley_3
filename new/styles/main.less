@@ -73,6 +73,7 @@ header {
   padding-top: 300px;
   min-height: 100vh;
   height: auto;
+  overflow: hidden;
   h1 {
     color: white;
     font-family: 'hackthevalley';
@@ -722,12 +723,12 @@ section {
       margin: 20px;
     }
     img {
-      height: 60px;
+      height: 50px;
       transform: scale(1);
       transition: transform ease 0.3s;
       cursor: pointer;
       &:hover {
-        transform: scale(1.5);
+        transform: scale(1.2);
         transition: transform ease 0.3s;
       }
     }
@@ -777,6 +778,12 @@ section {
   }
 }
 
+@media(max-width: 1400px) {
+  .vertical-nav {
+    display: none;
+  }
+}
+
 
 @media(max-width: 990px) {
   header {
@@ -786,9 +793,6 @@ section {
     overflow-x: hidden;
   }
   .scroll-btn {
-    display: none;
-  }
-  .vertical-nav {
     display: none;
   }
   .terminal {

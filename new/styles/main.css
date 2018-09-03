@@ -65,6 +65,7 @@ header {
   padding-top: 300px;
   min-height: 100vh;
   height: auto;
+  overflow: hidden;
 }
 header h1 {
   color: white;
@@ -695,13 +696,13 @@ section .sponsor-logos .logo-container {
   margin: 20px;
 }
 section .sponsor-logos img {
-  height: 60px;
+  height: 50px;
   transform: scale(1);
   transition: transform ease 0.3s;
   cursor: pointer;
 }
 section .sponsor-logos img:hover {
-  transform: scale(1.5);
+  transform: scale(1.2);
   transition: transform ease 0.3s;
 }
 .terminal {
@@ -746,6 +747,11 @@ section .sponsor-logos img:hover {
   outline: none;
   font-family: monospace;
 }
+@media (max-width: 1400px) {
+  .vertical-nav {
+    display: none;
+  }
+}
 @media (max-width: 990px) {
   header {
     padding-top: 150px;
@@ -754,9 +760,6 @@ section .sponsor-logos img:hover {
     overflow-x: hidden;
   }
   .scroll-btn {
-    display: none;
-  }
-  .vertical-nav {
     display: none;
   }
   .terminal {
