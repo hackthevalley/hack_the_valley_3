@@ -31,6 +31,7 @@ body {
     margin: 0;
     padding: 0;
     padding-left: 20px;
+    float: none !important;
     li {
       line-height: 75px;
       display: inline-block;
@@ -38,9 +39,13 @@ body {
       padding-left: 20px;
       padding-right: 20px;
       color: white;
+      float: none !important;
       font-family: @primary-font;
       &.active {
         border-bottom: white 4px solid;
+      }
+      a:link, a:visited {
+        color: white;
       }
     }
   }
@@ -57,6 +62,11 @@ body {
     padding-left: 20px;
     transition: all ease 0.5s;
   }
+}
+
+#main-header {
+  perspective: 100px;
+  transform: rotateY(40deg) rotateX(20deg);
 }
 
 header {
@@ -96,12 +106,39 @@ section {
 }
 
 footer {
-  color: white;
+  background-color: #1d1d1d;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+  z-index: 999;
+  color: darken(white, 20%);
   font-family: @primary-font;
-  font-size: 16px;
-  opacity: 0.6;
-  padding-top: 100px;
-  padding-bottom: 30px;
+  text-align: center;
+  .copyright {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+  .links-container {
+    h4 {
+      font-size: 14px;
+      border-top: #666666 1px solid;
+      margin-top: 20px;
+      display: inline-block;
+      padding-top: 15px;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        list-style: none;
+        font-size: 13px;
+        padding-top: 5px;
+        a:link, a:visited {
+          color: darken(white, 50%);
+        }
+      }
+    }
+  }
 }
 
 .faq-block {
@@ -610,4 +647,163 @@ footer {
   -webkit-animation: ani-mouse 2.5s linear infinite;
   -moz-animation: ani-mouse 2.5s linear infinite;
   animation: ani-mouse 2.5s linear infinite;
+}
+
+.vertical-nav {
+  position: fixed;
+  left: 50px;
+  top: 70px;
+  font-family: @primary-font;
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    padding-bottom: 10px;
+  }
+  a {
+    font-size: 14px;
+    opacity: 0.7;
+    transition: all ease 0.5s;
+    text-decoration: none;
+    .dot {
+      position: relative;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      display: inline-block;
+      border-radius: 50px;
+      transition: all ease 0.5s;
+    }
+    .label {
+      opacity: 0;
+      transition: opacity ease 0.3s;
+    }
+    &:hover, &.active {
+      font-size: 18px;
+      .dot {
+        width: 15px;
+        height: 15px;
+        left: -2.5px;
+        transition: all ease 0.5s;
+      }
+      opacity: 1;
+      transition: all ease 0.5s;
+      .label {
+        opacity: 1;
+        transition: opacity ease 0.3s;
+      }
+    }
+  }
+}
+
+section {
+  &.about-section,
+  &.sponsors-section,
+  &.faqs-section {
+    padding-bottom: 50px;
+  }
+  .about-content {
+    color: white;
+    font-family: @primary-font;
+    font-size: 18px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .sponsor-logos {
+    padding-top: 50px;
+    .logo-container {
+      display: inline-block;
+      padding: 40px;
+      margin: 20px;
+    }
+    img {
+      height: 60px;
+      transform: scale(1);
+      transition: transform ease 0.3s;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.5);
+        transition: transform ease 0.3s;
+      }
+    }
+  }
+}
+
+.terminal {
+  position: fixed;
+  right: 0;
+  bottom: -300px;
+  width: 400px;
+  height: 340px;
+  background-color: #111111;
+  transition: bottom ease 0.3s;
+  box-shadow: rgba(0,0,0,0.2) 0 0 20px;
+  z-index: 9999;
+  &:hover {
+    bottom: 0;
+    transition: bottom ease 0.3s;
+  }
+  .terminal-title {
+    height: 40px;
+    font-family: @primary-font;
+    color: darken(white, 30%);
+    line-height: 40px;
+    padding-left: 20px;
+  }
+  .terminal-content {
+    height: 260px;
+    width: 100%;
+    background-color: #090909;
+    border: none;
+    color: #c4c4c4;
+  }
+  .terminal-input {
+    height: 40px;
+    width: 100%;
+    color: #c4c4c4;
+    background-color: black;
+    border: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding-left: 10px;
+    outline: none;
+    font-family: monospace;
+  }
+}
+
+
+@media(max-width: 990px) {
+  header {
+    padding-top: 150px;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .scroll-btn {
+    display: none;
+  }
+  .vertical-nav {
+    display: none;
+  }
+  .terminal {
+    display: none;
+  }
+  section {
+    .sponsor-logos {
+      .logo-container {
+        display: inline-block;
+        padding: 10px;
+        margin: 10px;
+      }
+      img {
+        height: 30px;
+      }
+    }
+  }
 }

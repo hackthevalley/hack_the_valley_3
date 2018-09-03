@@ -13,4 +13,8 @@
         }
     }
 
+    $('.sponsor-logos .logo-container').tilt({
+
+    })
+
 })();
