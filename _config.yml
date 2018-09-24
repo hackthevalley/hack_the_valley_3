@@ -21,6 +21,9 @@ description: >- # this means to ignore newlines until "baseurl:"
   creativity to the test!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
+copyright: Copyright Hack the Valley 2018
+facebook_username: hackthevalley
+github_username: hackthevalley
 
 # Build settings
 markdown: kramdown

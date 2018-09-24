@@ -1,0 +1,32 @@
+.home-0 {
+  color: $grey-color;
+  background-color: $brand-color;
+  padding: $spacing-unit;
+  
+  .subscribe {
+    &--email {
+      width: 220px;
+      text-align: center;
+      color: $grey-color-dark;
+      background-color: transparent;
+      padding: $spacing-unit / 4;
+      border: 1px $grey-color-dark solid;
+      border-radius: 50px;
+    }
+  }
+}
+
+.home-1 {
+  background-color: $grey-color;
+  padding: $spacing-unit;
+}
+
+.home-2 {
+  background-color: $background-color;
+  padding: $spacing-unit;
+}
+
+.home-3 {
+  background-color: $grey-color;
+  padding: $spacing-unit;
+}
