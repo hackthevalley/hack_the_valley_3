@@ -5,6 +5,7 @@ $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
+$heading-font-family: "hackthevalley", sans-serif !default;
 
 $spacing-unit:     30px !default;
 
@@ -41,8 +42,17 @@ $on-laptop:        800px !default;
   font-size: $base-font-size * $ratio;
 }
 
+@font-face {
+  font-family: 'hackthevalley';
+  src: url('../assets/hackthevalley-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../assets/hackthevalley-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../assets/hackthevalley-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+  url('../assets/hackthevalley-webfont.svg') format('svg'); /* Legacy iOS */
+}
+
 // Import partials.
 @import
+  "elementor/shapes",
   "htv/base",
   "htv/layout",
   "htv/home"
