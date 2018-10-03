@@ -1,4 +1,26 @@
 .faq {
   background-color: $background-color;
-  padding: $spacing-unit;
+  padding: 8 * $spacing-unit $spacing-unit / 2;
+
+  @include media-query($on-palm) {
+    padding: 4 * $spacing-unit $spacing-unit / 2;
+  }
+
+  &__container {
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  &__heading {
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: bolder;
+    margin-bottom: 2 * $spacing-unit;
+    
+    @include media-query($on-palm) {
+      font-size: 2rem;
+      margin-bottom: 1 * $spacing-unit;
+    }
+  }
 }
