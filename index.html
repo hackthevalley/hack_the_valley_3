@@ -1,5 +1,81 @@
 ---
 layout: default
+
+header:
+  headingText: Hack The<br>Valley 3
+  subtitleText: January 11-13 | UofT Scarborough
+  emailPlaceholderText: Enter your email address
+
+about:
+  headingText: About
+  bodyText: >-
+    Join 500 innovative and creative developers, designers, and creators for
+    <strong>36 hours of hacking</strong>. You'll get access to some of the
+    best hardware and APIs on the market. Plus get to meet some experienced
+    and awesome mentors! All this in just one weekend? I know, it's hard to
+    believe.
+    <br>
+    <br>
+    Remember, you don't need to be a pro to attend. So, if this is your first
+    hackathon, we can't wait to expose you to the incomparable world of
+    creation.
+
+faq:
+  columns:
+    - - headingText: Where is it?
+        bodyText: >-
+          University of Toronto Scarborough, IC Instructional Centre, 1095 Military
+          Trail, Scarborough, ON M1C 1A4, Canada
+        linkText: Directions
+        linkHref: "#directions"
+        backgroundColor: "#f64d34"
+
+      - headingText: Who can apply?
+        bodyText: >-
+          Any college or university student is eligible to apply.
+        linkText: Apply Now
+        linkHref: "#apply"
+        backgroundColor: "#c29356"
+
+    - - headingText: When/where can I hack?
+        bodyText: >-
+          Hack The Valley will start with the kick-off ceremony. There will be
+          events planned throughout the day for those who arrive early. A
+          detailed schedule of events and locations will be posted later. All
+          work eligible for prizes must be completed between Friday night after
+          the kick-off and Sunday morning at the hacking location (TBA). We will
+          not accept any projects that were started prior to the hackathon (e.g.
+          continuations of personal projects).
+        backgroundColor: "#7bbe48"
+
+    - - headingText: How is Hack The Valley run?
+        bodyText: >-
+          Hack The Valley almost entirely by (sleep-deprived) University of
+          Toronto students, with some advice and assistance from our friends
+          at Department of Student Life (DSL), Association of Mathematical and
+          Computer Science Students (AMACSS) and Computer Science Enrichment
+          Club (CSEC). One hundred percent of the funding for Hack the Valley
+          comes from corporate sponsor donations.
+        backgroundColor: "#c29356"
+
+sponsors:
+  headingText: Sponsors
+  logos:
+    - alt: Coinberry
+      src: /uploads/coinberry-logo.png
+      href: https://coinberry.com
+      width: 300px
+      break: true
+
+    - alt: .tech Domains
+      src: /uploads/tech-domains-logo.png
+      href: https://get.tech
+      width: 130px
+    
+    - alt: Indico
+      src: /uploads/indico-logo.png
+      href: https://getindico.io
+      width: 220px
 ---
 
 <div class="htv__leaf"></div>
@@ -7,40 +83,102 @@ layout: default
 <section id="particles" class="header">
   <div class="htv__content header__content">
     <h1 class="header__title">
-      Hack The<br>Valley 3
+      {{ page.header.headingText }}
     </h1>
     
     <h2 class="header__subtitle">
-      January 11-13 | UofT Scarborough
+      {{ page.header.subtitleText }}
     </h2>
 
     <form class="header__subscribe" action="." method="POST">
       <input
         class="header__subscribe-email"
         type="email"
-        placeholder="Enter your email address"
+        placeholder="{{ page.header.emailPlaceholderText }}"
         autocomplete="email"
       />
       <input type="submit" style="display: none;" />
     </form>
   </div>
+
+  <div id="particles" style="pointer-events: none;"></div>
+
   <div class="header__wave"></div>
 </section>
 
-<section class="about htv__section">
-  <div class="htv__content">
-    <h2 style="text-transform: uppercase;">About</h2>
+<section class="about">
+  <h2 class="about__heading">
+    {{ page.about.headingText }}
+  </h2>
+
+  <div class="about__container">
+
+    <p class="about__body">
+      {{ page.about.bodyText }}
+    </p>
   </div>
 </section>
 
-<section class="faq htv__section">
-  <div class="htv__content">
-    <h2>FAQs</h2>
+<section class="faq">
+  <h2 class="faq__heading">FAQs</h2>
+
+  <div class="faq__container">
+      {% for column in page.faq.columns %}
+        <div class="faq__column">
+          {% for item in column %}
+            <div
+              class="faq__qa"
+              style="background-color: {{ item.backgroundColor }};"
+            >
+              <h3 class="faq__qa_heading">
+                {{ item.headingText }}
+              </h3>
+
+              <p class="faq__qa_body">
+                {{ item.bodyText }}
+              </p>
+
+              {% if item.linkText %}
+                <a
+                  class="faq__qa_link"
+                  href="{{ item.linkHref }}"
+                  rel="noopener noreferrer"
+                >
+                  {{ item.linkText }}
+                </a>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
   </div>
 </section>
 
-<section class="sponsors htv__section">
-  <div class="htv__content">
-    <h2 style="text-transform: uppercase;">Sponsors</h2>
+<section class="sponsors">
+  <h2 class="sponsors__heading">
+    {{ page.sponsors.headingText }}
+  </h2>
+
+  <div class="sponsors__container">
+    {% for logo in page.sponsors.logos %}
+      <a
+        class="sponsors__link"
+        href="{{ logo.href }}?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          class="sponsors__logo"
+          src="{{ logo.src }}"
+          alt="{{ logo.alt }}"
+          width="{{ logo.width }}"
+          height="{{ logo.height }}"
+        />
+      </a>
+
+      {% if logo.break %}
+      <div style="width: 100%;"></div>
+      {% endif %}
+    {% endfor %}
   </div>
 </section>

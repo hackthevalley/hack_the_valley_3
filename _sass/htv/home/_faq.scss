@@ -1,2 +1,97 @@
 .faq {
+  background-color: $background-color;
+  padding: 8 * $spacing-unit $spacing-unit / 2;
+
+  @include media-query($on-palm) {
+    padding: 4 * $spacing-unit $spacing-unit / 2;
+  }
+
+  &__container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+
+    @include media-query($on-palm) {
+      display: block;
+    }
+  }
+
+  &__heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: bolder;
+    margin-bottom: 2 * $spacing-unit;
+    
+    @include media-query($on-palm) {
+      font-size: 2rem;
+      margin-bottom: 1 * $spacing-unit;
+    }
+  }
+
+  &__column {
+    width: 0;
+    flex-grow: 1;
+    padding: 0 20px;
+
+    @include media-query($on-palm) {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  &__qa {
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+    margin-bottom: 40px;
+
+    @include media-query($on-palm) {
+      margin-bottom: 20px;
+    }
+
+    &_heading {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 1.5rem;
+      margin-bottom: $spacing-unit / 2;
+    }
+
+    &_body {
+      margin-bottom: $spacing-unit;
+    }
+
+    &_link {
+      display: inline-block;
+      text-transform: uppercase;
+      min-width: 80px;
+      padding: 5px 15px;
+      border-radius: 16px;
+      border: 1px solid white;
+      color: white;
+      text-decoration: none;
+      transition: 0.4s ease-in-out box-shadow,
+        0.4s ease-in-out background-color,
+        0.2s ease-in-out transform;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: white;
+        background-color: rgba(255, 255, 255, 0.2);
+        text-decoration: none;
+        box-shadow: 0 0 4px 2px rgba(255, 255, 255, 0.5);
+        transform: scale(1.05);
+        outline: none;
+      }
+
+      &:active {
+        transform: translateY(3px);
+      }
+
+      &:visited {
+        color: white;
+      }
+    }
+  }
 }
