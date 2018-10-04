@@ -1,5 +1,42 @@
 ---
 layout: default
+faq:
+  columns:
+    - - headingText: Where is it?
+        bodyText: >-
+          University of Toronto Scarborough, IC Instructional Centre, 1095 Military
+          Trail, Scarborough, ON M1C 1A4, Canada
+        linkText: Directions
+        linkHref: "#directions"
+        backgroundColor: "#f64d34"
+
+      - headingText: Who can apply?
+        bodyText: >-
+          Any college or university student is eligible to apply.
+        linkText: Apply Now
+        linkHref: "#apply"
+        backgroundColor: "#c29356"
+
+    - - headingText: When/where can I hack?
+        bodyText: >-
+          Hack The Valley will start with the kick-off ceremony. There will be
+          events planned throughout the day for those who arrive early. A
+          detailed schedule of events and locations will be posted later. All
+          work eligible for prizes must be completed between Friday night after
+          the kick-off and Sunday morning at the hacking location (TBA). We will
+          not accept any projects that were started prior to the hackathon (e.g.
+          continuations of personal projects).
+        backgroundColor: "#7bbe48"
+        
+    - - headingText: How is Hack The Valley run?
+        bodyText: >-
+          Hack The Valley almost entirely by (sleep-deprived) University of
+          Toronto students, with some advice and assistance from our friends
+          at Department of Student Life (DSL), Association of Mathematical and
+          Computer Science Students (AMACSS) and Computer Science Enrichment
+          Club (CSEC). One hundred percent of the funding for Hack the Valley
+          comes from corporate sponsor donations.
+        backgroundColor: "#c29356"
 ---
 
 <section class="header">
@@ -53,7 +90,34 @@ layout: default
   <h2 class="faq__heading">FAQs</h2>
 
   <div class="faq__container">
-    <h2 class="faq__heading">FAQs</h2>
+      {% for column in page.faq.columns %}
+        <div class="faq__column">
+          {% for item in column %}
+            <div
+              class="faq__qa"
+              style="background-color: {{ item.backgroundColor }};"
+            >
+              <h3 class="faq__qa_heading">
+                {{ item.headingText }}
+              </h3>
+
+              <p class="faq__qa_body">
+                {{ item.bodyText }}
+              </p>
+
+              {% if item.linkText %}
+                <a
+                  class="faq__qa_link"
+                  href="{{ item.linkHref }}"
+                  rel="noopener noreferrer"
+                >
+                  {{ item.linkText }}
+                </a>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
   </div>
 </section>
 
