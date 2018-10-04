@@ -12,21 +12,6 @@
     </main>
 
     {%- include footer.html -%}
-    
+    {%- include scripts.html -%}
   </body>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS.load('particles', 'assets/particles.json');
-    xhr = new XMLHttpRequest();
-    xhr.addEventListener("load", () => {
-      const svg = xhr.responseXML.documentElement;
-      document.querySelectorAll(".htv__leaf").forEach(el => {
-        el.appendChild(svg);
-        el.children[0].style.fill = "#a0c642";
-      });
-    });
-
-    xhr.open("GET", "assets/leaf.svg");
-    xhr.send("");
-  </script>
 </html>
