@@ -1,5 +1,25 @@
 ---
 layout: default
+
+header:
+  headingText: Hack The<br>Valley 3
+  subtitleText: January 11-13 | UofT Scarborough
+  emailPlaceholderText: Enter your email address
+
+about:
+  headingText: About
+  bodyText: >-
+    Join 500 innovative and creative developers, designers, and creators for
+    <strong>36 hours of hacking</strong>. You'll get access to some of the
+    best hardware and APIs on the market. Plus get to meet some experienced
+    and awesome mentors! All this in just one weekend? I know, it's hard to
+    believe.
+    <br>
+    <br>
+    Remember, you don't need to be a pro to attend. So, if this is your first
+    hackathon, we can't wait to expose you to the incomparable world of
+    creation.
+
 faq:
   columns:
     - - headingText: Where is it?
@@ -27,7 +47,7 @@ faq:
           not accept any projects that were started prior to the hackathon (e.g.
           continuations of personal projects).
         backgroundColor: "#7bbe48"
-        
+
     - - headingText: How is Hack The Valley run?
         bodyText: >-
           Hack The Valley almost entirely by (sleep-deprived) University of
@@ -42,18 +62,18 @@ faq:
 <section class="header">
   <div class="header__container">
     <h1 class="header__title">
-      Hack The<br>Valley 3
+      {{ page.header.headingText }}
     </h1>
     
     <h2 class="header__subtitle">
-      January 11-13 | UofT Scarborough
+      {{ page.header.subtitleText }}
     </h2>
 
     <form class="header__subscribe" action="." method="POST">
       <input
         class="header__subscribe-email"
         type="email"
-        placeholder="Enter your email address"
+        placeholder="{{ page.header.emailPlaceholderText }}"
         autocomplete="email"
       />
       <input type="submit" style="display: none;" />
@@ -66,22 +86,14 @@ faq:
 </section>
 
 <section class="about">
-  <h2 class="about__heading">About</h2>
+  <h2 class="about__heading">
+    {{ page.about.headingText }}
+  </h2>
 
   <div class="about__container">
 
     <p class="about__body">
-      Join 500 innovative and creative developers, designers, and creators for
-      <strong>36 hours of hacking</strong>. You'll get access to some of the
-      best hardware and APIs on the market. Plus get to meet some experienced
-      and awesome mentors! All this in just one weekend? I know, it's hard to
-      believe.
-    </p>
-    
-    <p class="about__body">
-      Remember, you don't need to be a pro to attend. So, if this is your first
-      hackathon, we can't wait to expose you to the incomparable world of
-      creation.
+      {{ page.about.bodyText }}
     </p>
   </div>
 </section>
