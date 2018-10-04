@@ -10,6 +10,50 @@
 
 // Global styles.
 
+.htv {
+  &__content {
+    margin: auto;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 1500px;
+    padding: 0 $spacing-unit;
+  }
+
+  &__section {
+    padding: $spacing-unit 0;
+    &:nth-of-type(even) {
+      background-color: $grey-color;
+    }
+    &:nth-of-type(odd) {
+      background-color: $background-color;
+    }
+  }
+
+  &__leaf {
+    width: 100px;
+    height: auto;
+    position: fixed;
+    margin: auto;
+    z-index: 1;
+  }
+}
+
+@include media-query($on-laptop) {
+  .htv {
+    &__content {
+      max-width: 720px;
+    }
+  }
+}
+
+@include media-query($on-palm) {
+  .htv {
+    &__content {
+      max-width: none;
+    }
+  }
+}
+
 // Import partials.
 @import
   "htv/base",

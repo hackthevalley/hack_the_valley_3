@@ -2,18 +2,15 @@
   position: relative;
   color: $grey-color;
   background-color: $brand-color;
-  padding-top: 6 * $spacing-unit;
-  
-  &__container {
-    margin: auto;
-    max-width: 1500px;
-    padding: 0 $spacing-unit;
-  }
+  padding: 4 * $spacing-unit 0 5 * $spacing-unit;
+  display: flex;
+
+  &__content { z-index: 1 }
 
   &__title {
     font-family: $heading-font-family;
-    font-size: 8.5rem;
-    line-height: 8.5rem;
+    font-size: 7rem;
+    line-height: 7rem;
     letter-spacing: 4px;
     font-weight: bold;
     text-transform: uppercase;
@@ -32,32 +29,33 @@
     background-image: url('/assets/waves.svg');
     transform: rotate(180deg);
     background-size: cover;
-    margin-top: 3 * $spacing-unit;
     height: 50px;
     width: 100%;
+    z-index: 1;
+    @include position(absolute, auto auto 0, auto, 0, -2px, 0);
   }
 
   &__subscribe {
     margin: auto;
     letter-spacing: 3px;
     max-width: 400px;
-    padding-top: 5 * $spacing-unit;
+    padding-top: 2 * $spacing-unit;
     
     &-email {
       width: 100%;
       text-align: center;
       color: $grey-color-dark;
       background-color: transparent;
-      padding: $spacing-unit / 4;
+      padding: $spacing-unit / 4 $spacing-unit / 2;
       border: 1px $grey-color-dark solid;
       border-radius: 50px;
       font-size: 1.25rem;
-      transition: 0.5s ease-in-out box-shadow;
+      transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 
-      &:hover,
-      &:focus {
+      &:hover, &:focus {
         outline: none;
-        box-shadow: 0 0 8px 2px rgba(200, 200, 200, 0.7);
+        background-color: $grey-color;
+        color: $brand-color
       }
     }
   }
@@ -72,12 +70,36 @@
   }
 }
 
+// Animations
+.header {
+  &__title {
+    animation: header__title 0.8s ease-in-out 0s backwards;
+    @keyframes header__title {
+      from { opacity: 0; transform: translate3d(-40%, 0, 0) }
+      to { opacity: 1; transform: translate3d(0, 0, 0) }
+    }
+  }
+  &__subtitle {
+    animation: header__subtitle 0.8s ease-in-out 0s backwards;
+    @keyframes header__subtitle {
+      from { opacity: 0; transform: translate3d(-40%, 0, 0) }
+      to { opacity: 1; transform: translate3d(0, 0, 0) }
+    }
+  }
+  &__subscribe {
+        animation: header__subscribe 0.8s ease-in-out 0s backwards;
+    @keyframes header__subscribe {
+      from { opacity: 0; transform: translate3d(0, 100%, 0) scale3d(0, 0, 0) }
+      to { opacity: 1; transform: translate3d(0, 0, 0) scale3d(1, 1, 1) }
+    }
+  }
+
+
+}
+
 @include media-query($on-laptop) {
   .header {
     padding-top: 3 * $spacing-unit;
-    &__container {
-      max-width: 720px;
-    }
     &__title {
       font-size: 4rem;
       line-height: 4rem;
@@ -86,18 +108,12 @@
       max-width: 320px;
       padding-top: 3 * $spacing-unit;
     }
-    &__wave {
-      margin-top: 2.5 * $spacing-unit;
-    }
   }
 }
 
 @include media-query($on-palm) {
   .header {
-    padding-top: 1.5 * $spacing-unit;
-    &__container {
-      max-width: none;
-    }
+    padding: 1.5 * $spacing-unit 0;
     &__title {
       font-size: 2rem;
       line-height: 2rem;
@@ -107,13 +123,10 @@
     }
     &__subscribe {
       max-width: 220px;
-      padding-top: 1.5 * $spacing-unit;
+      padding: 1.5 * $spacing-unit 0;
       &-email {
         font-size: 1rem;
       }
-    }
-    &__wave {
-      margin-top: 2.5 * $spacing-unit;
     }
   }
 }

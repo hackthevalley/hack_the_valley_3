@@ -14,3 +14,12 @@
 @mixin relative-font-size($ratio) {
   font-size: $base-font-size * $ratio;
 }
+
+@mixin position($pos, $margin: auto, $top: auto, $right: $top, $bottom: $top, $left: $right) {
+  position: $pos;
+  margin: $margin;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
