@@ -9,6 +9,10 @@
   &__container {
     max-width: 1200px;
     margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   &__heading {
@@ -21,6 +25,16 @@
     @include media-query($on-palm) {
       font-size: 2rem;
       margin-bottom: 1 * $spacing-unit;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    margin: 30px;
+    transition: 0.2s ease-out transform;
+
+    &:hover {
+      transform: scale(1.15);
     }
   }
 }

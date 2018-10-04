@@ -57,6 +57,25 @@ faq:
           Club (CSEC). One hundred percent of the funding for Hack the Valley
           comes from corporate sponsor donations.
         backgroundColor: "#c29356"
+
+sponsors:
+  headingText: Sponsors
+  logos:
+    - alt: Coinberry
+      src: /uploads/coinberry-logo.png
+      href: https://coinberry.com
+      width: 300px
+      break: true
+
+    - alt: .tech Domains
+      src: /uploads/tech-domains-logo.png
+      href: https://get.tech
+      width: 130px
+    
+    - alt: Indico
+      src: /uploads/indico-logo.png
+      href: https://getindico.io
+      width: 220px
 ---
 
 <section class="header">
@@ -134,8 +153,30 @@ faq:
 </section>
 
 <section class="sponsors">
-  <h2 class="sponsors__heading">Sponsors</h2>
+  <h2 class="sponsors__heading">
+    {{ page.sponsors.headingText }}
+  </h2>
 
-    <div class="sponsors__container">
-    </div>
+  <div class="sponsors__container">
+    {% for logo in page.sponsors.logos %}
+      <a
+        class="sponsors__link"
+        href="{{ logo.href }}?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          class="sponsors__logo"
+          src="{{ logo.src }}"
+          alt="{{ logo.alt }}"
+          width="{{ logo.width }}"
+          height="{{ logo.height }}"
+        />
+      </a>
+
+      {% if logo.break %}
+      <div style="width: 100%;"></div>
+      {% endif %}
+    {% endfor %}
+  </div>
 </section>
