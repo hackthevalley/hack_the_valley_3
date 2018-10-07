@@ -1,7 +1,27 @@
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
-  particlesJS.load('particles', 'assets/particles.json');
-  xhr = new XMLHttpRequest();
+
+  // Variables
+  const xhr = new XMLHttpRequest();
+  const threshold = 0.1;
+  const intersectionTargets = document.querySelectorAll("#htv section");
+  const intersectionObserver = new IntersectionObserver(
+    entries => entries.forEach(
+      entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= threshold) {
+          intersectionObserver.unobserve(entry.target);
+          console.log(entry);
+        }
+      }
+    ),
+    { threshold: [threshold] }
+  );
+
+
+  // Sets up particle background
+  particlesJS.load('header', 'assets/particles.json');
+
+  // Gets leaf
   xhr.addEventListener("load", () => {
     const svg = xhr.responseXML.documentElement;
     document.querySelectorAll(".htv__leaf").forEach(el => {
@@ -12,4 +32,12 @@
 
   xhr.open("GET", "assets/leaf.svg");
   xhr.send("");
+
+  // Intersection Observer
+  console.log(intersectionTargets);
+  Array.from(intersectionTargets).forEach(target =>
+    intersectionObserver.observe(target)
+  );
+
+
 </script>
