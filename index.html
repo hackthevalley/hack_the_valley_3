@@ -6,6 +6,14 @@ header:
   subtitleText: January 11-13 | UofT Scarborough
   emailPlaceholderText: Enter your email address
 
+nav:
+  - text: About
+    link: "#about"
+  - text: FAQs
+    link: "#faqs"
+  - text: Sponsors
+    link: "#sponsors"
+
 about:
   headingText: About
   bodyText: >-
@@ -26,16 +34,19 @@ faq:
         bodyText: >-
           University of Toronto Scarborough, IC Instructional Centre, 1095 Military
           Trail, Scarborough, ON M1C 1A4, Canada
-        linkText: Directions
-        linkHref: "#directions"
         backgroundColor: "#f64d34"
 
       - headingText: Who can apply?
         bodyText: >-
-          Any college or university student is eligible to apply.
-        linkText: Apply Now
-        linkHref: "#apply"
+          Any college or university student is eligible to apply. Application will open soon, please enter your email above to subscribe to updates.
         backgroundColor: "#c29356"
+
+      - headingText: Once I am accepted, what do I need to bring?
+        bodyText: >-
+          You’ll need: A laptop and charger. Everything else is optional. However, we strongly encourage you to bring a sleeping bag, pillows, toiletries, and a couple of changes of clothes.
+          <br/><br/>
+          You won’t need: An idea, or a team. You can create your own team (teams of 4 recommended) during the hackathon, and generate some amazing creations along the way. You also don’t need to worry about food, we’ve got you covered.
+        backgroundColor: "#7bbe48"
 
     - - headingText: When/where can I hack?
         bodyText: >-
@@ -48,6 +59,11 @@ faq:
           continuations of personal projects).
         backgroundColor: "#7bbe48"
 
+      - headingText: How much will Hack the Valley cost me?
+        bodyText: >-
+          It’s completely free, so don’t worry! We'll provide you with a weekend's worth of meals, drinks, and snacks and a place to crash when you need a break from coding. In fact, you’ll probably walk away loaded with all the swag that you’ll get at Hack the Valley.
+        backgroundColor: "#f64d34"
+
     - - headingText: How is Hack The Valley run?
         bodyText: >-
           Hack The Valley almost entirely by (sleep-deprived) University of
@@ -58,14 +74,17 @@ faq:
           comes from corporate sponsor donations.
         backgroundColor: "#c29356"
 
+      - headingText: What can I win?
+        bodyText: >-
+          It’s not about winning-it’s about exploring your passion while making great friends (which if you ask us, is a BONUS!!!). But if you’re a fan of winning, we’ve got you covered. We’ve got some great prizes in stock (will be announced soon). A panel of professional judges will select the best three hacks based on the following criteria: creativity, functionality, level of technical difficulty and quality. Most sponsors like to offer their own prizes as well for specific categories which are evaluated themselves.
+        backgroundColor: "#7bbe48"
 sponsors:
   headingText: Sponsors
   logos:
     - alt: Coinberry
       src: /uploads/coinberry-logo.png
       href: https://coinberry.com
-      width: 300px
-      break: true
+      width: 210px
 
     - alt: .tech Domains
       src: /uploads/tech-domains-logo.png
@@ -75,9 +94,37 @@ sponsors:
     - alt: Indico
       src: /uploads/indico-logo.png
       href: https://getindico.io
-      width: 220px
+      width: 130px
+
+    - alt: Hasura
+      src: /uploads/hasura.svg
+      href: https://hasura.io/
+      width: 160px
+
+    - alt: Hasura
+      src: /uploads/jetbrains.png
+      href: https://www.jetbrains.com/
+      width: 100px
+
+    - alt: Red Bull
+      src: /uploads/redbull.png
+      href: https://www.redbull.com/ca-en/
+      width: 120px
+
+    - alt: Red Bull
+      src: /uploads/balsamiq.png
+      href: https://balsamiq.com/
+      width: 140px
 ---
 
+<nav id="nav" class="nav">
+  <ul class="nav__list">
+    <li class="nav__toggle" onclick="toggleNavigation()"><i class="fa fa-angle-down" aria-hidden="true"></i></li>
+    {% for nav_item in page.nav %}
+      <li class="nav__item"><a href="{{ nav_item.link }}">{{ nav_item.text }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
 
 <section id="header" class="header htv__section">
   <div class="htv__content header__content">
@@ -89,15 +136,15 @@ sponsors:
       {{ page.header.subtitleText }}
     </h2>
 
-    <form class="header__subscribe" action="." method="POST">
-      <input
-        class="header__subscribe-email"
-        type="email"
-        placeholder="{{ page.header.emailPlaceholderText }}"
-        autocomplete="email"
-      />
-      <input type="submit" style="display: none;" />
-    </form>
+    <!--<form class="header__subscribe" action="." method="POST">-->
+      <!--<input-->
+        <!--class="header__subscribe-email"-->
+        <!--type="email"-->
+        <!--placeholder="{{ page.header.emailPlaceholderText }}"-->
+        <!--autocomplete="email"-->
+      <!--/>-->
+      <!--<input type="submit" style="display: none;" />-->
+    <!--</form>-->
   </div>
 
   <div id="particles" style="pointer-events: none;"></div>
@@ -109,7 +156,11 @@ sponsors:
   </svg>
 </section>
 
+<<<<<<< HEAD
 <section id="about" class="about htv__section">
+=======
+<section class="about" id="about">
+>>>>>>> c13fecf2e7249b0e75a0437b28bed07622dd39d0
   <h2 class="about__heading">
     {{ page.about.headingText }}
   </h2>
@@ -122,9 +173,12 @@ sponsors:
   </div>
 </section>
 
+<<<<<<< HEAD
 <section id="faq" class="faq htv__section">
+=======
+<section class="faq" id="faqs">
+>>>>>>> c13fecf2e7249b0e75a0437b28bed07622dd39d0
   <h2 class="faq__heading">FAQs</h2>
-
   <div class="faq__container">
       {% for column in page.faq.columns %}
         <div class="faq__column">
@@ -157,7 +211,11 @@ sponsors:
   </div>
 </section>
 
+<<<<<<< HEAD
 <section id="sponsors" class="sponsors htv__section">
+=======
+<section class="sponsors" id="sponsors">
+>>>>>>> c13fecf2e7249b0e75a0437b28bed07622dd39d0
   <h2 class="sponsors__heading">
     {{ page.sponsors.headingText }}
   </h2>

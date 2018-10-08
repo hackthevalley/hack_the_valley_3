@@ -92,5 +92,25 @@
   xhr.open("GET", "assets/leaf.svg");
   xhr.send("");
 
+  // Get on scroll event
+  window.onscroll = function(e) {
+      const navElement = document.getElementById("nav");
+      let top  = window.pageYOffset || document.documentElement.scrollTop
+      if(top > 200) {
+          navElement.classList.add("nav-active");
+      } else {
+          navElement.classList.remove("nav-active");
+      }
+  };
+
+  function toggleNavigation() {
+      const navElement = document.getElementById("nav");
+      if(navElement.classList.contains("nav-extended")) {
+          navElement.classList.remove("nav-extended");
+      } else {
+          navElement.classList.add("nav-extended");
+      }
+  }
+
 
 </script>
