@@ -34,6 +34,29 @@
     @include position(absolute, auto auto 0, auto, 0, -2px, 0);
   }
 
+  &__leaf {
+    &--0 {
+      fill: #8DC53E;
+      top: -80px;
+      left: 560px;
+      width: 260px;
+    }
+    &--1 {
+      fill: #C79F59;
+      top: 280px;
+      width: 160px;
+    }
+    &--2 {
+      fill: #C6C240;
+      top: -36px;
+      left: 60px;
+      width: 145px;
+      & > * {
+        transform: scaleX(-1) rotate(26deg);
+      }
+    }
+  }
+
   &__subscribe {
     margin: auto;
     letter-spacing: 3px;
@@ -107,6 +130,24 @@
       max-width: 320px;
       padding-top: 3 * $spacing-unit;
     }
+    &__leaf {
+      &--0 {
+        top: 65px;
+        left: 370px;
+        width: 160px;
+        & > * { transform: rotate(-20deg) }
+      }
+      &--1 {
+        top: 180px;
+        left: 40px;
+        width: 120px;
+      }
+      &--2 {
+        top: -36px;
+        left: 60px;
+        width: 105px;
+      }
+    }
   }
 }
 
@@ -120,6 +161,9 @@
     }
     &__subtitle {
       font-size: 0.8rem;
+    }
+    &__leaf {
+      display: none;
     }
     &__subscribe {
       max-width: 220px;

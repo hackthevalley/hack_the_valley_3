@@ -13,6 +13,7 @@
 .htv {
   &__content {
     margin: auto;
+    position: relative;
     width: 100%;
     box-sizing: border-box;
     max-width: 1500px;
@@ -21,7 +22,6 @@
 
   &__section {
     &:not(&--show) > * { opacity: 0 }
-    position: relative;
     padding: $spacing-unit 0;
 
     &:nth-of-type(even) {
@@ -38,19 +38,20 @@
 
   &__leaf {
     height: auto;
-    &--pos {
+    &--flip {
+      transform: scaleX(-1);
+    }
+
+    &--fade {
       position: absolute;
       top: 0;
       left: 0;
       margin: 0;
       z-index: 1;
-    }
-
-    &--fade {
-      animation: htv__leaf 0.8s ease-in-out 0s backwards;
+      animation: htv__leaf 0.8s ease-in-out 0.2s backwards;
       @keyframes htv__leaf {
-        from { opacity: 0; transform: translate3d(0, -100px, 0) }
-        to { opacity: 1; transform: translate3d(0, 0, 0) }
+        from { opacity: 0; transform: translate3d(100px, -140px, 0) rotate(30deg) }
+        to { opacity: 1; transform: translate3d(0, 0, 0) rotate(0deg) }
       }
     }
   }

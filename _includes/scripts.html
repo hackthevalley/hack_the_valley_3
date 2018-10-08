@@ -1,54 +1,7 @@
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
 
-  // Leaf metadata
-  // 0 - header, 1 - about, 2 - faq, 3 - sponsors
-  const leafData = {
-    header: [
-      {
-        size: "200px",
-        rotate: "0deg",
-        x: "530px", y: "60px",
-        color: "#8DC53E"
-      },
-      {
-        size: "160px",
-        rotate: "10deg",
-        flip: true,
-        x: "20px", y: "460px",
-        color: "#C6A052"
-      }
-    ],
-    about: [
-      {
-        size: "200px",
-        rotate: "0deg",
-        flip: true,
-        x: "10px", y: "10px",
-        color: "#8DC53E"
-      }
-    ],
-    faq: [
-      {
-        size: "200px",
-        rotate: "0deg",
-        x: "10px", y: "10px",
-        color: "#8DC53E"
-      }
-    ],
-    sponsors: [
-      {
-        size: "200px",
-        rotate: "0deg",
-        x: "10px", y: "10px",
-        color: "#8DC53E"
-      }
-    ]
-  };
-
   // Variables
-  let svg;
-  const xhr = new XMLHttpRequest();
   const threshold = 0.1;
   const intersectionTargets = document.querySelectorAll("#htv section");
   const intersectionObserver = new IntersectionObserver(
@@ -56,18 +9,6 @@
       ({ isIntersecting, target }) => {
         if (isIntersecting) {
           target.classList.add("htv__section--show");
-          const data = leafData[target.id];
-          data.forEach(({ rotate, flip, size, x, y, color }) => {
-            const pos = document.createElement("div");
-            const fade = document.createElement("div");
-            pos.className = "htv__leaf--pos";
-            fade.className = "htv__leaf--fade";
-            pos.style = `transform: translate3d(${x}, ${y}, 0)`;
-            pos.appendChild(fade);
-            fade.appendChild(svg.cloneNode(true));
-            fade.lastChild.style = `transform: rotate(${rotate}) ${flip? "scaleX(-1)": ""}; width: ${size}; fill: ${color}`;
-            target.appendChild(pos);
-          })
           intersectionObserver.unobserve(target);
         }
       }
@@ -75,41 +16,33 @@
     { threshold: [threshold] }
   );
 
-
-  // Sets up particle background
   particlesJS.load('header', 'assets/particles.json');
-
-  // Gets leaf
-  xhr.addEventListener("load", () => {
-    svg = xhr.responseXML.documentElement;
-    window.requestAnimationFrame(() =>
-      Array.from(intersectionTargets).forEach(target =>
-        intersectionObserver.observe(target)
-      )
+  window.requestAnimationFrame(() =>
+    Array.from(intersectionTargets).forEach(target =>
+      intersectionObserver.observe(target)
     )
-  });
-
-  xhr.open("GET", "assets/leaf.svg");
-  xhr.send("");
+  )
 
   // Get on scroll event
-  window.onscroll = function(e) {
-      const navElement = document.getElementById("nav");
-      let top  = window.pageYOffset || document.documentElement.scrollTop
-      if(top > 200) {
-          navElement.classList.add("nav-active");
-      } else {
-          navElement.classList.remove("nav-active");
-      }
+  const onscroll = e => {
+    const top = window.pageYOffset || document.documentElement.scrollTop;
+    const { classList } = document.getElementById("nav");
+    if (top > 200) {
+      classList.add("nav-active");
+    } else {
+      classList.remove("nav-active");
+    }
   };
 
-  function toggleNavigation() {
-      const navElement = document.getElementById("nav");
-      if(navElement.classList.contains("nav-extended")) {
-          navElement.classList.remove("nav-extended");
-      } else {
-          navElement.classList.add("nav-extended");
-      }
+  window.addEventListener("scroll", onscroll, { passive: true });
+
+  const toggleNavigation = () => {
+    const { classList } = document.getElementById("nav");
+    if (classList.contains("nav-extended")) {
+      classList.remove("nav-extended");
+    } else {
+      classList.add("nav-extended");
+    }
   }
 
 
