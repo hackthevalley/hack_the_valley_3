@@ -1,0 +1,24 @@
+$base-font-family: "Poppins", sans-serif !default;
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+$heading-font-family: "hackthevalley", sans-serif !default;
+
+$spacing-unit:     30px !default;
+
+$text-color:       #3a3a3a !default;
+$background-color: #ffffff !default;
+$brand-color:      #1f1f1f !default;
+
+$grey-color:       #e8e8e8 !default;
+$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color-dark:  darken($grey-color, 25%) !default;
+
+$table-text-align: left !default;
+
+// Width of the content area
+$content-width:    800px !default;
+
+$on-palm:          600px !default;
+$on-laptop:        800px !default;

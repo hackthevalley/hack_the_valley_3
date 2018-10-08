@@ -1,0 +1,29 @@
+.about {
+
+  &__container {
+    text-align: center;
+    max-width: 750px;
+    margin: auto;
+  }
+
+  &__heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: bolder;
+    margin-bottom: 2 * $spacing-unit;
+    
+    @include media-query($on-palm) {
+      font-size: 2rem;
+      margin-bottom: 1 * $spacing-unit;
+    }
+  }
+  
+  &__body {
+    font-size: 1.3rem;
+
+    @include media-query($on-palm) {
+      font-size: 1.2rem;
+    }
+  }
+}

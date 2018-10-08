@@ -1,101 +1,256 @@
-<!doctype html>
-<html>
-<head>
-    <title>Hack the Valley 3</title>
-    <meta charset="utf-8">
-    <link href="vendor/bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.6.2/fullcalendar.min.css" rel="stylesheet"/>
-    <link href="styles/styles.css?v=22" type="text/css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"
-          rel="stylesheet"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-    <link rel="icon" href="resources/favicon.png">
-    <meta property="og:title" content="Hack the Valley 3"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:image" content="https://www.evernote.com/l/Aq0fIM72o5hGDKEKWvv01f9JLfnAVKr87rkB/image.png"/>
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://www.evernote.com/l/Aq0fIM72o5hGDKEKWvv01f9JLfnAVKr87rkB/image.png">
-    <meta property="og:site_name" content="Hack The Valley 3"/>
-    <meta property="og:description"
-          content="UofT Scarborough is hosting a 36h Hackathon from January 11th to 13th, 2019. Get your hands on some of the top hardware and API's out there and put your creativity to the test!"/>
-    <!--    SEO Tags-->
-    <meta name="copyright" content="Copyright Hack the Valley 2018">
-    <meta name="description"
-          content="UofT Scarborough is hosting a 36h Hackathon from January 11th to 13th, 2019. Get your hands on some of the top hardware and API's out there and put your creativity to the test!">
-    <meta name="keywords"
-          content="hackathon, programming, computer science, student, university, toronto, hack the valley, hack valley, utsc, uoft">
-    <meta name="robots" content="index,nofollow">
-    <script src="vendor/processing.min.js"></script>
-    <!--    /SEO Tags-->
-</head>
-<body>
-<div id="initial-load-screen">
-    <div class="sk-cube-grid">
-        <div class="sk-cube sk-cube1"></div>
-        <div class="sk-cube sk-cube2"></div>
-        <div class="sk-cube sk-cube3"></div>
-        <div class="sk-cube sk-cube4"></div>
-        <div class="sk-cube sk-cube5"></div>
-        <div class="sk-cube sk-cube6"></div>
-        <div class="sk-cube sk-cube7"></div>
-        <div class="sk-cube sk-cube8"></div>
-        <div class="sk-cube sk-cube9"></div>
-    </div>
-</div>
+---
+layout: default
 
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" id="nav-collapse-button">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"><img src="resources/htv_logo_white.png" alt="hack the valley 3 logo" /></a>
-        </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li class="page-5-nav"><a href="https://htv2.hackthevalley.io"><i class="fa fa-angle-left" aria-hidden="true"></i> HTV 2</a></li>
-            </ul>
+header:
+  headingText: Hack The<br>Valley 3
+  subtitleText: January 11-13 | UofT Scarborough
+  emailPlaceholderText: Enter your email address
 
-        </div>
-    </div>
+nav:
+  - text: About
+    link: "#about"
+  - text: FAQs
+    link: "#faq"
+  - text: Sponsors
+    link: "#sponsors"
+
+about:
+  headingText: About
+  bodyText: >-
+    Join 500 innovative and creative developers, designers, and creators for
+    <strong>36 hours of hacking</strong>. You'll get access to some of the
+    best hardware and APIs on the market. Plus get to meet some experienced
+    and awesome mentors! All this in just one weekend? I know, it's hard to
+    believe.
+    <br>
+    <br>
+    Remember, you don't need to be a pro to attend. So, if this is your first
+    hackathon, we can't wait to expose you to the incomparable world of
+    creation.
+
+faq:
+  columns:
+    - - headingText: Where is it?
+        bodyText: >-
+          University of Toronto Scarborough, IC Instructional Centre, 1095 Military
+          Trail, Scarborough, ON M1C 1A4, Canada
+        backgroundColor: "#f64d34"
+
+      - headingText: Who can apply?
+        bodyText: >-
+          Any college or university student is eligible to apply. Application will open soon, please enter your email above to subscribe to updates.
+        backgroundColor: "#c29356"
+
+      - headingText: Once I am accepted, what do I need to bring?
+        bodyText: >-
+          You’ll need: A laptop and charger. Everything else is optional. However, we strongly encourage you to bring a sleeping bag, pillows, toiletries, and a couple of changes of clothes.
+          <br/><br/>
+          You won’t need: An idea, or a team. You can create your own team (teams of 4 recommended) during the hackathon, and generate some amazing creations along the way. You also don’t need to worry about food, we’ve got you covered.
+        backgroundColor: "#7bbe48"
+
+    - - headingText: When/where can I hack?
+        bodyText: >-
+          Hack The Valley will start with the kick-off ceremony. There will be
+          events planned throughout the day for those who arrive early. A
+          detailed schedule of events and locations will be posted later. All
+          work eligible for prizes must be completed between Friday night after
+          the kick-off and Sunday morning at the hacking location (TBA). We will
+          not accept any projects that were started prior to the hackathon (e.g.
+          continuations of personal projects).
+        backgroundColor: "#7bbe48"
+
+      - headingText: How much will Hack the Valley cost me?
+        bodyText: >-
+          It’s completely free, so don’t worry! We'll provide you with a weekend's worth of meals, drinks, and snacks and a place to crash when you need a break from coding. In fact, you’ll probably walk away loaded with all the swag that you’ll get at Hack the Valley.
+        backgroundColor: "#f64d34"
+
+    - - headingText: How is Hack The Valley run?
+        bodyText: >-
+          Hack The Valley almost entirely by (sleep-deprived) University of
+          Toronto students, with some advice and assistance from our friends
+          at Department of Student Life (DSL), Association of Mathematical and
+          Computer Science Students (AMACSS) and Computer Science Enrichment
+          Club (CSEC). One hundred percent of the funding for Hack the Valley
+          comes from corporate sponsor donations.
+        backgroundColor: "#c29356"
+
+      - headingText: What can I win?
+        bodyText: >-
+          It’s not about winning-it’s about exploring your passion while making great friends (which if you ask us, is a BONUS!!!). But if you’re a fan of winning, we’ve got you covered. We’ve got some great prizes in stock (will be announced soon). A panel of professional judges will select the best three hacks based on the following criteria: creativity, functionality, level of technical difficulty and quality. Most sponsors like to offer their own prizes as well for specific categories which are evaluated themselves.
+        backgroundColor: "#7bbe48"
+sponsors:
+  headingText: Sponsors
+  logos:
+    - alt: Coinberry
+      src: /uploads/coinberry-logo.png
+      href: https://coinberry.com
+      width: 210px
+
+    - alt: .tech Domains
+      src: /uploads/tech-domains-logo.png
+      href: https://get.tech
+      width: 130px
+    
+    - alt: Indico
+      src: /uploads/indico-logo.png
+      href: https://getindico.io
+      width: 130px
+
+    - alt: Hasura
+      src: /uploads/hasura.svg
+      href: https://hasura.io/
+      width: 160px
+
+    - alt: Hasura
+      src: /uploads/jetbrains.png
+      href: https://www.jetbrains.com/
+      width: 100px
+
+    - alt: Red Bull
+      src: /uploads/redbull.png
+      href: https://www.redbull.com/ca-en/
+      width: 120px
+
+    - alt: Red Bull
+      src: /uploads/balsamiq.png
+      href: https://balsamiq.com/
+      width: 140px
+    
+    - alt: FEM in STEM
+      src: /uploads/feminstem-logo.png
+      href: https://www.feminstem.com/
+      width: 150px
+---
+
+<nav id="nav" class="nav">
+  <ul class="nav__list">
+    <li class="nav__toggle" onclick="toggleNavigation()"><i class="fa fa-angle-down" aria-hidden="true"></i></li>
+    {% for nav_item in page.nav %}
+      <li class="nav__item"><a href="{{ nav_item.link }}">{{ nav_item.text }}</a></li>
+    {% endfor %}
+  </ul>
 </nav>
 
-<div class="container-fluid fullpage">
-    <div id="intro" class="section fullpage-section">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1171.17 720"><defs><style>.cls-1,.cls-11,.cls-12,.cls-15,.cls-16,.cls-17,.cls-18,.cls-19,.cls-2,.cls-20,.cls-21,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8,.cls-9{fill:none;}.cls-11,.cls-12,.cls-15,.cls-16,.cls-17,.cls-18,.cls-19,.cls-2,.cls-20,.cls-21,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8,.cls-9{stroke:#fff;}.cls-11,.cls-12,.cls-15,.cls-16,.cls-17,.cls-18,.cls-19,.cls-2,.cls-20,.cls-21,.cls-3,.cls-4,.cls-5,.cls-6,.cls-7,.cls-9{stroke-miterlimit:1.5;}.cls-2,.cls-9{stroke-width:0.77px;}.cls-3{stroke-width:0.6px;}.cls-4{stroke-width:0.56px;}.cls-5{stroke-width:0.72px;}.cls-6,.cls-7{stroke-opacity:0.96;}.cls-6{stroke-width:3px;}.cls-21,.cls-7{stroke-width:2px;}.cls-8{stroke-width:4px;}.cls-9{stroke-opacity:0.75;}.cls-10{fill:#fff;}.cls-11{stroke-width:0.76px;}.cls-12{stroke-width:0.75px;}.cls-13{opacity:0.59;}.cls-14{isolation:isolate;}.cls-15{stroke-width:0.62px;}.cls-16,.cls-19{stroke-width:0.57px;}.cls-17{stroke-width:0.64px;}.cls-18{stroke-width:0.59px;}.cls-19{stroke-opacity:0.15;}.cls-20{stroke-opacity:0.58;stroke-width:0.95px;}</style><image id="image" width="50" height="254" xlink:href="data:image/png;base64,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"/></defs><title>building</title><g id="Layer_1" data-name="Layer 1"><g id="Building"><rect class="cls-1" x="-92.87" y="-68.06" width="1372.64" height="857.9"/><path class="cls-2" d="M146.61,614.91v97l30.89-.51v-94Z"/><path class="cls-3" d="M157.58,615.8v96.09l30.89-.51V619.47Z"/><path class="cls-4" d="M274.73,628.45v83.44l34.87-.51V632.56Z"/><path class="cls-5" d="M268.78,626.76v85.13l34.87-.51v-80.5Z"/><path class="cls-6" d="M92.28,169.8,27,197.47V602.24l64.59-3.66Z"/><path class="cls-7" d="M92.91,15.93l-7.86,2.18V597.84l7.83.56Z"/><path class="cls-8" d="M556.32,377l.26,261.35h0L404,620.38l-88.55,1.3v-359l89-16.26ZM319.24,265.79V617.88l85-1.25,148.59,17.5-.25-255.43L403.42,250.41Z"/><path class="cls-8" d="M742.46,358.55l-6.17,6-1.73,157.24-75.09-4L622,534.08,619.76,386.6,742.26,267.1Zm-118.93,29.6,2.15,140.24L658.78,514l72.07,3.86L732.55,363l6.15-6-.18-81Z"/><path class="cls-9" d="M742.37,267v91.2l91.25-70.81Z"/><path class="cls-8" d="M1165,260.65V604.4l-229.22-8.27-1-390.2.27-.21ZM939.52,592.51l221.71,8V263.61L938.59,210.41Z"/><path class="cls-2" d="M658.47,457.82l73.62,6.27v19.48L658,477.07"/><path class="cls-10" d="M658.47,477.83,622.3,496.08V477.86l36.26-20.8Zm-35.21.59v16.1l34.25-17.28.07-18.5Z"/><path class="cls-2" d="M659.21,577.56V557.78l72.06,3.57v19.53l-72.07-3.31"/><path class="cls-2" d="M659.21,557.69l.14-39.9,72.79,4.48-.37,38.47-72.49-3.25"/><path class="cls-10" d="M660,557.92,627.81,570l-.38-1,32.16-12.09Z"/><path class="cls-8" d="M935,206.64l3.52,389.21L840.61,608.4l-111.23,2.13.09-29.49.07-19.92.65-197.38L933.75,206ZM733.93,365.58l-.65,195.55-.07,19.92-.07,25.66,107.19-2.05,94.42-12.1-3.44-379.89Z"/><path class="cls-2" d="M404.39,248.91V614.79"/><path class="cls-11" d="M642,523.11l1.14,89.81"/><path class="cls-12" d="M659.7,577.43,627,588.79"/><path class="cls-10" d="M660.35,608.68,628.65,619l-1.16-3.58,31.7-10.27Z"/><path class="cls-2" d="M318.1,327.53l85.81-14.15L554.74,421.59v26.1L403.41,351.62l-85.19,11.59Z"/><path class="cls-2" d="M317.59,426l85.81-9.14,150.83,76.92v24.85l-151.32-66-85.19,7.84Z"/><path class="cls-2" d="M317.59,524l85.81-5.39L554.22,565.5v23.6L402.9,554.36l-85.19,4.08Z"/><g class="cls-13"><image id="_Image1" data-name=" Image1" class="cls-14" width="16" height="106" transform="translate(691.04 364.86) scale(1 1.07)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAABzCAYAAAB+UemrAAAACXBIWXMAAAsSAAALEgHS3X78AAACKElEQVRYR+3ZN0/DQBTA8SQQktB7Z0AUgagrAzMSO7AjsSDRew8lBXY+7+M9XRL5rDv77PcQFsrwX8i9H5YxxvhSAJDiFrrAUgab5iC92Al2FBdZxj6wXew4KpLFdrAHbAybioqMYPfYXg2jr026ImlsA9Thr/k+mwB1XgKRAraPnWF9hs8JOf11hH7+RWwb1PVgWjNuQ+gcbGGv2Ixl2Iuc+ZEeUGf7AOsIAagxP5LDytgmqKMJA+rIuReh71x0GPQjF1xkVAIZkUIuuciwFHLlRdpBXWBhg96GJJBB7FoCueEiA4lCbhOB9PuRQkzkjovQffeei/RKIQ9cpMeEvDkM+pHHRCDd2BMX6cKeE4F0Jgp58SL5GEiHFFLkIto9KC6i/b5xkMZMHXl3GBRHtJk/RXISSBuox3U2UuIiWSmkLI5oZ9qxVimkIoFUuUiLBJIxIR9gH7Ahn15Eu4QdS0shX1wklWykBPbFTcS9JhKCaLf/CP13pAz2xU3EvSZiRtJ1RHtgiZAIQn+LM4lAqlJIixepQPCAqUptloWUpZAsFylJIW3JRKoQPGCKHtFyXISewvN1RHtOj5AI8iaFFLjIqxTSHhehTaRDUC/rGteJ9g9QQLRxRBuI9PZzHTzbOGEILZwDtdNGb4JXwbAHZENo4QKojSDaKVgyDduQdG2ANjto62UxaNiP0J17BdS7eNpVm3cZ9iPfoE7abNjAryJ02KNhC4P6Aa5WVJoKKSGPAAAAAElFTkSuQmCC"/></g><g class="cls-13"><image id="_Image2" data-name=" Image2" class="cls-14" width="17" height="117" transform="translate(790.17 440.02) scale(1.06 1.06)" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAB3CAYAAAAO9xC+AAAACXBIWXMAAAp1AAAKdQFKJd39AAABQUlEQVRoQ+2aO0vEQBhFV1dBBEHBRsHFV2FjZWUlqPjAwk4QOxsf+ABtBEERRRs78feOZ0gWJCZzZ1cLi1ucJplzhpmUX1ohhNZfIBcIJmHkN6ExOIAPmO4nFHffgxfYhJteQ0OwBs+wD6Pl88vc0ACswCMcwXjlfVZoCe7gBKYa1iRDnXLBLcwnNmoMxU95DPewHIpjpSI/Qt1P+QSrMJgRqA19wiEMZ4jJULzMuQzJIS05pCWHtOSQlhzSkkNackhLDmnJIS05pCWHtOSQlhzSkkNackhLDmnJIS05pCWHtOSQlhzSkkNackhLDmnJIS3971Acki/CQ6+hdijG0TtwBa9wCuvh248DdaE4PZ6FLbiANzgPxYy/E2qmy91Q3G0GNuCsFOP5t8tN2lWxKfQO17ALC6G4g6RYF5roR6zyBUQCh7ZVbv/jAAAAAElFTkSuQmCC"/></g><g class="cls-13"><use id="_Image3" data-name=" Image3" class="cls-14" transform="translate(851.76 277.5) scale(1.07 1.07)" xlink:href="#image"/></g><g class="cls-13"><use id="_Image3-2" data-name=" Image3" class="cls-14" transform="translate(851.76 277.5) scale(1.07 1.07)" xlink:href="#image"/></g><path class="cls-8" d="M320.35,195V622.5L91.18,600l.62-586.7,1.32-.63ZM94.93,596.61,316.6,618.36V196.82L95.54,19.44Z"/><path class="cls-15" d="M233.28,125.86V613.52"/><path class="cls-16" d="M262.46,151.09V615.5"/><path class="cls-17" d="M290.79,172.75V618.59"/><path class="cls-16" d="M320,195.31V620.82"/><path class="cls-16" d="M118.25,34.64v567"/><path class="cls-16" d="M147.43,58V603.66"/><path class="cls-18" d="M175.76,80.41V606.76"/><path class="cls-3" d="M204.94,103.44V608.74"/><path class="cls-16" d="M92.59,143.2l151.18,80.46,77.11,41"/><path class="cls-17" d="M92.18,539.93l228,33.51"/><path class="cls-16" d="M92.73,280.8l226.63,81.35"/><path class="cls-16" d="M92.69,404.64l227,54.7"/><path class="cls-19" d="M57.86,191.31v417"/><path class="cls-20" d="M972.22,258.16l32.58,8.27V388.82l30.7,3.69V539.85l-33.82-1.73,1.59-143.33L972.71,392Z"/><path class="cls-20" d="M1093.76,286l22.43,4.89V403.17l17.37,2.52.05,138.78-20.77-1.13,1.83-134.2-20.41-2.77Z"/><rect class="cls-10" x="658.74" y="576.89" width="1.07" height="31.83"/><path class="cls-10" d="M557.51,644.22l0,4.68,0,4.51v4.35l0,4.18v7.87l0,1.86v3.61l0,1.74v8.12l0,1.5v2.89l0,1.38v1.35l0,1.3v1.27l0,1.23v1.64h-.93l0-1.64,0-1.22v-1.27l0-1.3v-2.73l0-1.42v-3l0-1.54V661.93l0-4.18,0-4.34V648.9l0-4.68,0-5.3h.93Z"/><path class="cls-10" d="M659.7,609.79v26.68l-.05,4.14v4l-.05,2v35.07l-.06,2.43v5.78l-.05,1.11v4.27l-.06,1v2l-.05,1.43-.92,0,.05-1.43v-2l.05-1v-3.17l.06-1.09v-4.53l.05-2.36V648.57l.05-2v-6l.06-4.14v-8.6l.05-2.31v-8.33l-.05-1.22v-7.93h.87Z"/><path class="cls-21" d="M1164.19,601.39l-1.29,108.45L936.67,715,756.61,702,658,700.13l-170.66-3.49-169.8,8V633.22L26.84,603.71l.22-2.13,292.63,29.7v71.13l167.62-7.92L658,698l98.67,1.89,180,13,224.05-5.13,1.27-106.38Z"/><path class="cls-10" d="M727.83,606.75l-.09,3.75-68.26-1.57.09-3.75Z"/><path class="cls-8" d="M623.77,386.79l-.63,3.7-70.21-12,.63-3.7Z"/><path class="cls-8" d="M627.91,619.12l-69.52,19.11-1-3.62,66.72-18.34-1.05-84.59,3.75,0Z"/></g></g></svg>
-        <h1 id="website-title">hack the valley III</h1>
-        <h3 id="hackathon-location" class="location">January 11 - 13, 2019 | UofT Scarborough</h3>
+<section id="header" class="header htv__section">
+  <div class="htv__content header__content">
+    <h1 class="header__title">
+      {{ page.header.headingText }}
+    </h1>
+    
+    <h2 class="header__subtitle">
+      {{ page.header.subtitleText }}
+    </h2>
+
+    <!--<form class="header__subscribe" action="." method="POST">-->
+      <!--<input-->
+        <!--class="header__subscribe-email"-->
+        <!--type="email"-->
+        <!--placeholder="{{ page.header.emailPlaceholderText }}"-->
+        <!--autocomplete="email"-->
+      <!--/>-->
+      <!--<input type="submit" style="display: none;" />-->
+    <!--</form>-->
+    <div class="htv__leaf--fade header__leaf header__leaf--0">
+      <svg class="htv__leaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.31 222.44">
+        <path d="M425.8,56.89l.47-1.1-.42,1Z" />
+        <path d="M71.71,109.67C269.07-91.1,426.27,55.79,426.27,55.79s-58,51.37-239.21,70.92c0,0,112.92,15.15,225.15-39.89l.09.11c16.07-7.69,97.5-47.15,132-74.11,38.32-30,23.64.73,5.52,10.32C534.09,31.43,436.07,79.66,410,92.47,286.36,338.11,30.69,164.22,0,142.12,7.82,146.68,31,153.22,71.71,109.67Z" />
+      </svg>
     </div>
-</div>
-
-<div id="sponsorship" class="section">
-    <div class="container">
-        <h2>Sponsorship</h2>
-        <p>
-            Interested in sponsoring? Shoot us an email at <a href="mailto:hello@hackthevalley.io">hello@hackthevalley.io</a>
-        </p>
+    <div class="htv__leaf--fade header__leaf header__leaf--1">
+      <svg class="htv__leaf htv__leaf--flip" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.31 222.44">
+        <path d="M425.8,56.89l.47-1.1-.42,1Z" />
+        <path d="M71.71,109.67C269.07-91.1,426.27,55.79,426.27,55.79s-58,51.37-239.21,70.92c0,0,112.92,15.15,225.15-39.89l.09.11c16.07-7.69,97.5-47.15,132-74.11,38.32-30,23.64.73,5.52,10.32C534.09,31.43,436.07,79.66,410,92.47,286.36,338.11,30.69,164.22,0,142.12,7.82,146.68,31,153.22,71.71,109.67Z" />
+      </svg>
     </div>
-</div>
+    <div class="htv__leaf--fade header__leaf header__leaf--2">
+      <svg class="htv__leaf htv__leaf--flip" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.31 222.44">
+        <path d="M425.8,56.89l.47-1.1-.42,1Z" />
+        <path d="M71.71,109.67C269.07-91.1,426.27,55.79,426.27,55.79s-58,51.37-239.21,70.92c0,0,112.92,15.15,225.15-39.89l.09.11c16.07-7.69,97.5-47.15,132-74.11,38.32-30,23.64.73,5.52,10.32C534.09,31.43,436.07,79.66,410,92.47,286.36,338.11,30.69,164.22,0,142.12,7.82,146.68,31,153.22,71.71,109.67Z" />
+      </svg>
+    </div>
+  </div>
 
-<footer>
-    &copy; Hack the Valley 2018&nbsp; | &nbsp;
-    <a href="https://github.com/hackthevalley" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>&nbsp; | &nbsp;
-    <a href="mailto:hello@hackthevalley.io" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i> Contact Us</a>
-</footer>
+  <div id="particles" style="pointer-events: none;"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/is_js/0.9.0/is.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
+  <svg class="header__wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+    <path fill="#e8e8e8" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
+  	c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
+  	c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z" />
+  </svg>
+</section>
 
-<script src="js/app.js?v=32" type="text/javascript"></script>
-</body>
-</html>
+<section id="about" class="about htv__section">
+  <h2 class="about__heading">
+    {{ page.about.headingText }}
+  </h2>
+
+  <div class="about__container">
+
+    <p class="about__body">
+      {{ page.about.bodyText }}
+    </p>
+  </div>
+</section>
+
+<section id="faq" class="faq htv__section">
+  <h2 class="faq__heading">FAQs</h2>
+  <div class="faq__container">
+      {% for column in page.faq.columns %}
+        <div class="faq__column">
+          {% for item in column %}
+            <div
+              class="faq__qa"
+              style="background-color: {{ item.backgroundColor }};"
+            >
+              <h3 class="faq__qa_heading">
+                {{ item.headingText }}
+              </h3>
+
+              <p class="faq__qa_body">
+                {{ item.bodyText }}
+              </p>
+
+              {% if item.linkText %}
+                <a
+                  class="faq__qa_link"
+                  href="{{ item.linkHref }}"
+                  rel="noopener noreferrer"
+                >
+                  {{ item.linkText }}
+                </a>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+  </div>
+</section>
+
+<section id="sponsors" class="sponsors htv__section">
+  <h2 class="sponsors__heading">
+    {{ page.sponsors.headingText }}
+  </h2>
+
+  <div class="sponsors__container">
+    {% for logo in page.sponsors.logos %}
+      <a
+        class="sponsors__link"
+        href="{{ logo.href }}?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          class="sponsors__logo"
+          src="{{ logo.src }}"
+          alt="{{ logo.alt }}"
+          width="{{ logo.width }}"
+          height="{{ logo.height }}"
+        />
+      </a>
+
+      {% if logo.break %}
+      <div style="width: 100%;"></div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

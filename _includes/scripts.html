@@ -1,0 +1,49 @@
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+
+  // Variables
+  const threshold = 0.1;
+  const intersectionTargets = document.querySelectorAll("#htv section");
+  const intersectionObserver = new IntersectionObserver(
+    entries => entries.forEach(
+      ({ isIntersecting, target }) => {
+        if (isIntersecting) {
+          target.classList.add("htv__section--show");
+          intersectionObserver.unobserve(target);
+        }
+      }
+    ),
+    { threshold: [threshold] }
+  );
+
+  particlesJS.load('header', 'assets/particles.json');
+  window.requestAnimationFrame(() =>
+    Array.from(intersectionTargets).forEach(target =>
+      intersectionObserver.observe(target)
+    )
+  )
+
+  // Get on scroll event
+  const onscroll = e => {
+    const top = window.pageYOffset || document.documentElement.scrollTop;
+    const { classList } = document.getElementById("nav");
+    if (top > 200) {
+      classList.add("nav-active");
+    } else {
+      classList.remove("nav-active");
+    }
+  };
+
+  window.addEventListener("scroll", onscroll, { passive: true });
+
+  const toggleNavigation = () => {
+    const { classList } = document.getElementById("nav");
+    if (classList.contains("nav-extended")) {
+      classList.remove("nav-extended");
+    } else {
+      classList.add("nav-extended");
+    }
+  }
+
+
+</script>

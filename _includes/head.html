@@ -1,0 +1,23 @@
+<head>
+    <title>{{ site.title }}</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="resources/favicon.png">
+    <meta property="og:title" content="{{ site.title }}">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.evernote.com/l/Aq0fIM72o5hGDKEKWvv01f9JLfnAVKr87rkB/image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.evernote.com/l/Aq0fIM72o5hGDKEKWvv01f9JLfnAVKr87rkB/image.png">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:description" content="{{ site.description }}">
+    <meta name="copyright" content="{{ site.copyright }}">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="keywords" content="hackathon, programming, computer science, student, university, toronto, hack the valley, hack valley, utsc, uoft">
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    {%- if jekyll.environment == 'production' and site.google_analytics -%}
+      {%- include google-analytics.html -%}
+    {%- endif -%}
+</head>

@@ -1,0 +1,176 @@
+.header {
+  position: relative;
+  color: $grey-color;
+  background-color: $brand-color;
+  padding: 8 * $spacing-unit 0 8 * $spacing-unit;
+  display: flex;
+
+  &__content { z-index: 1 }
+
+  &__title {
+    font-family: $heading-font-family;
+    font-size: 7rem;
+    line-height: 7rem;
+    letter-spacing: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0 0 ($spacing-unit / 2) 0;
+  }
+  
+  &__subtitle {
+    font-size: 1rem;
+    letter-spacing: 4px;
+    color: #aaaaaa;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  &__wave {
+    transform: rotate(180deg);
+    background-size: cover;
+    height: 50px;
+    width: 100%;
+    z-index: 1;
+    @include position(absolute, auto auto 0, auto, 0, -2px, 0);
+  }
+
+  &__leaf {
+    &--0 {
+      fill: #8DC53E;
+      top: -80px;
+      left: 560px;
+      width: 260px;
+    }
+    &--1 {
+      fill: #C79F59;
+      top: 280px;
+      width: 160px;
+    }
+    &--2 {
+      fill: #C6C240;
+      top: -36px;
+      left: 60px;
+      width: 145px;
+      & > * {
+        transform: scaleX(-1) rotate(26deg);
+      }
+    }
+  }
+
+  &__subscribe {
+    margin: auto;
+    letter-spacing: 3px;
+    max-width: 400px;
+    padding-top: 4 * $spacing-unit;
+    
+    &-email {
+      width: 100%;
+      text-align: center;
+      color: $grey-color-dark;
+      background-color: transparent;
+      padding: $spacing-unit / 4 $spacing-unit / 2;
+      border: 1px $grey-color-dark solid;
+      border-radius: 50px;
+      font-size: 1.25rem;
+      transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+
+      &:hover, &:focus {
+        outline: none;
+        background-color: $grey-color;
+        color: $brand-color
+      }
+    }
+  }
+
+  & .particles-js-canvas-el {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+}
+
+// Animations
+.htv__section--show {
+  .header {
+    &__title {
+      animation: header__title 0.8s ease-in-out 0s backwards;
+      @keyframes header__title {
+        from { opacity: 0; transform: translate3d(-40%, 0, 0) }
+        to { opacity: 1; transform: translate3d(0, 0, 0) }
+      }
+    }
+    &__subtitle {
+      animation: header__subtitle 0.8s ease-in-out 0s backwards;
+      @keyframes header__subtitle {
+        from { opacity: 0; transform: translate3d(-40%, 0, 0) }
+        to { opacity: 1; transform: translate3d(0, 0, 0) }
+      }
+    }
+    &__subscribe {
+          animation: header__subscribe 0.8s ease-in-out 0s backwards;
+      @keyframes header__subscribe {
+        from { opacity: 0; transform: translate3d(0, 100%, 0) scale3d(0, 0, 0) }
+        to { opacity: 1; transform: translate3d(0, 0, 0) scale3d(1, 1, 1) }
+      }
+    }
+  }
+}
+
+@include media-query($on-laptop) {
+  .header {
+    padding-top: 4 * $spacing-unit;
+    &__title {
+      font-size: 4rem;
+      line-height: 4rem;
+    }
+    &__subscribe {
+      max-width: 320px;
+      padding-top: 3 * $spacing-unit;
+    }
+    &__leaf {
+      &--0 {
+        top: 65px;
+        left: 370px;
+        width: 160px;
+        & > * { transform: rotate(-20deg) }
+      }
+      &--1 {
+        top: 180px;
+        left: 40px;
+        width: 120px;
+      }
+      &--2 {
+        top: -36px;
+        left: 60px;
+        width: 105px;
+      }
+    }
+  }
+}
+
+@include media-query($on-palm) {
+  .header {
+    padding: 5 * $spacing-unit 0;
+    text-align: center;
+    &__title {
+      font-size: 2rem;
+      line-height: 2rem;
+    }
+    &__subtitle {
+      font-size: 0.8rem;
+    }
+    &__leaf {
+      display: none;
+    }
+    &__subscribe {
+      max-width: 220px;
+      padding: 1.5 * $spacing-unit 0;
+      &-email {
+        font-size: 1rem;
+      }
+    }
+  }
+}
