@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>Hack the Valley 3</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="resources/favicon.png">
+    <meta property="og:title" content="Hack the Valley 3">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.evernote.com/l/Aq0fIM72o5hGDKEKWvv01f9JLfnAVKr87rkB/image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.evernote.com/l/Aq0fIM72o5hGDKEKWvv01f9JLfnAVKr87rkB/image.png">
+    <meta property="og:site_name" content="Hack the Valley 3">
+    <meta property="og:description" content="UofT Scarborough is hosting a 36h Hackathon from January 11th to 13th, 2019. Get your hands on some of the top hardware and API's out there and put your creativity to the test!">
+    <meta name="copyright" content="Copyright Hack the Valley 2018">
+    <meta name="description" content="UofT Scarborough is hosting a 36h Hackathon from January 11th to 13th, 2019. Get your hands on some of the top hardware and API's out there and put your creativity to the test!">
+    <meta name="keywords" content="hackathon, programming, computer science, student, university, toronto, hack the valley, hack valley, utsc, uoft">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /></head><body><main id="htv" aria-label="Content">
+      <style type="text/css" media="screen">
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+  }
+  h1 {
+    margin: 30px 0;
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+</style>
+
+<div class="container">
+  <h1>404</h1>
+
+  <p><strong>Page not found :(</strong></p>
+  <p>The requested page could not be found.</p>
+</div>
+
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Hack the Valley 3</h2>
+
+    <div class="footer-col-wrapper">
+
+      <div class="footer-col footer-col-12"><ul class="social-media-list"><li><a href="https://www.facebook.com/hackthevalley"><svg class="svg-icon"><use xlink:href="/assets/htv-social-icons.svg#facebook"></use></svg> <span class="username">hackthevalley</span></a></li><li><a href="https://github.com/hackthevalley"><svg class="svg-icon"><use xlink:href="/assets/htv-social-icons.svg#github"></use></svg> <span class="username">hackthevalley</span></a></li></ul>
+</div>
+    </div>
+  </div>
+</footer><script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+
+  // Variables
+  const xhr = new XMLHttpRequest();
+  const threshold = 0.1;
+  const intersectionTargets = document.querySelectorAll("#htv section");
+  const intersectionObserver = new IntersectionObserver(
+    entries => entries.forEach(
+      entry => {
+        if (entry.isIntersecting && entry.intersectionRatio >= threshold) {
+          intersectionObserver.unobserve(entry.target);
+          console.log(entry);
+        }
+      }
+    ),
+    { threshold: [threshold] }
+  );
+
+
+  // Sets up particle background
+  particlesJS.load('header', 'assets/particles.json');
+
+  // Gets leaf
+  xhr.addEventListener("load", () => {
+    const svg = xhr.responseXML.documentElement;
+    document.querySelectorAll(".htv__leaf").forEach(el => {
+      el.appendChild(svg);
+      el.children[0].style.fill = "#a0c642";
+    });
+  });
+
+  xhr.open("GET", "assets/leaf.svg");
+  xhr.send("");
+
+  // Intersection Observer
+  console.log(intersectionTargets);
+  Array.from(intersectionTargets).forEach(target =>
+    intersectionObserver.observe(target)
+  );
+
+  // Get on scroll event
+  window.onscroll = function(e) {
+      const navElement = document.getElementById("nav");
+      let top  = window.pageYOffset || document.documentElement.scrollTop
+      if(top > 200) {
+          navElement.classList.add("nav-active");
+      } else {
+          navElement.classList.remove("nav-active");
+      }
+  };
+
+  function toggleNavigation() {
+      const navElement = document.getElementById("nav");
+      if(navElement.classList.contains("nav-extended")) {
+          navElement.classList.remove("nav-extended");
+      } else {
+          navElement.classList.add("nav-extended");
+      }
+  }
+
+
+</script></body>
+</html>
