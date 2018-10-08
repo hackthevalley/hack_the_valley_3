@@ -1,10 +1,4 @@
 .about {
-  background-color: $grey-color;
-  padding: 7 * $spacing-unit $spacing-unit / 2 8 * $spacing-unit;
-
-  @include media-query($on-palm) {
-    padding: 3 * $spacing-unit $spacing-unit / 2 4 * $spacing-unit;
-  }
 
   &__container {
     text-align: center;

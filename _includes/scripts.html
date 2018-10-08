@@ -1,16 +1,74 @@
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
 
+  // Leaf metadata
+  // 0 - header, 1 - about, 2 - faq, 3 - sponsors
+  const leafData = {
+    header: [
+      {
+        size: "200px",
+        rotate: "0deg",
+        x: "530px", y: "60px",
+        color: "#8DC53E"
+      },
+      {
+        size: "160px",
+        rotate: "10deg",
+        flip: true,
+        x: "20px", y: "460px",
+        color: "#C6A052"
+      }
+    ],
+    about: [
+      {
+        size: "200px",
+        rotate: "0deg",
+        flip: true,
+        x: "10px", y: "10px",
+        color: "#8DC53E"
+      }
+    ],
+    faq: [
+      {
+        size: "200px",
+        rotate: "0deg",
+        x: "10px", y: "10px",
+        color: "#8DC53E"
+      }
+    ],
+    sponsors: [
+      {
+        size: "200px",
+        rotate: "0deg",
+        x: "10px", y: "10px",
+        color: "#8DC53E"
+      }
+    ]
+  };
+
   // Variables
+  let svg;
   const xhr = new XMLHttpRequest();
   const threshold = 0.1;
   const intersectionTargets = document.querySelectorAll("#htv section");
   const intersectionObserver = new IntersectionObserver(
     entries => entries.forEach(
-      entry => {
-        if (entry.isIntersecting && entry.intersectionRatio >= threshold) {
-          intersectionObserver.unobserve(entry.target);
-          console.log(entry);
+      ({ isIntersecting, target }) => {
+        if (isIntersecting) {
+          target.classList.add("htv__section--show");
+          const data = leafData[target.id];
+          data.forEach(({ rotate, flip, size, x, y, color }) => {
+            const pos = document.createElement("div");
+            const fade = document.createElement("div");
+            pos.className = "htv__leaf--pos";
+            fade.className = "htv__leaf--fade";
+            pos.style = `transform: translate3d(${x}, ${y}, 0)`;
+            pos.appendChild(fade);
+            fade.appendChild(svg.cloneNode(true));
+            fade.lastChild.style = `transform: rotate(${rotate}) ${flip? "scaleX(-1)": ""}; width: ${size}; fill: ${color}`;
+            target.appendChild(pos);
+          })
+          intersectionObserver.unobserve(target);
         }
       }
     ),
@@ -23,21 +81,16 @@
 
   // Gets leaf
   xhr.addEventListener("load", () => {
-    const svg = xhr.responseXML.documentElement;
-    document.querySelectorAll(".htv__leaf").forEach(el => {
-      el.appendChild(svg);
-      el.children[0].style.fill = "#a0c642";
-    });
+    svg = xhr.responseXML.documentElement;
+    window.requestAnimationFrame(() =>
+      Array.from(intersectionTargets).forEach(target =>
+        intersectionObserver.observe(target)
+      )
+    )
   });
 
   xhr.open("GET", "assets/leaf.svg");
   xhr.send("");
-
-  // Intersection Observer
-  console.log(intersectionTargets);
-  Array.from(intersectionTargets).forEach(target =>
-    intersectionObserver.observe(target)
-  );
 
 
 </script>

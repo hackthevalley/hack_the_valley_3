@@ -20,21 +20,39 @@
   }
 
   &__section {
+    &:not(&--show) > * { opacity: 0 }
+    position: relative;
     padding: $spacing-unit 0;
+
     &:nth-of-type(even) {
       background-color: $grey-color;
     }
     &:nth-of-type(odd) {
       background-color: $background-color;
     }
+
+    &.header {
+      background-color: $brand-color;
+    }
   }
 
   &__leaf {
-    width: 100px;
     height: auto;
-    position: fixed;
-    margin: auto;
-    z-index: 1;
+    &--pos {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      z-index: 1;
+    }
+
+    &--fade {
+      animation: htv__leaf 0.8s ease-in-out 0s backwards;
+      @keyframes htv__leaf {
+        from { opacity: 0; transform: translate3d(0, -100px, 0) }
+        to { opacity: 1; transform: translate3d(0, 0, 0) }
+      }
+    }
   }
 }
 

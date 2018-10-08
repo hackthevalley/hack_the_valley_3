@@ -1,10 +1,4 @@
 .faq {
-  background-color: $background-color;
-  padding: 8 * $spacing-unit $spacing-unit / 2;
-
-  @include media-query($on-palm) {
-    padding: 4 * $spacing-unit $spacing-unit / 2;
-  }
 
   &__container {
     max-width: 1200px;
