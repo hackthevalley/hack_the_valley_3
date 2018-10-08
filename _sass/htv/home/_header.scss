@@ -2,7 +2,7 @@
   position: relative;
   color: $grey-color;
   background-color: $brand-color;
-  padding: 4 * $spacing-unit 0 5 * $spacing-unit;
+  padding: 8 * $spacing-unit 0 8 * $spacing-unit;
   display: flex;
 
   &__content { z-index: 1 }
@@ -38,7 +38,7 @@
     margin: auto;
     letter-spacing: 3px;
     max-width: 400px;
-    padding-top: 2 * $spacing-unit;
+    padding-top: 4 * $spacing-unit;
     
     &-email {
       width: 100%;
@@ -98,7 +98,7 @@
 
 @include media-query($on-laptop) {
   .header {
-    padding-top: 3 * $spacing-unit;
+    padding-top: 4 * $spacing-unit;
     &__title {
       font-size: 4rem;
       line-height: 4rem;
@@ -112,7 +112,8 @@
 
 @include media-query($on-palm) {
   .header {
-    padding: 1.5 * $spacing-unit 0;
+    padding: 5 * $spacing-unit 0;
+    text-align: center;
     &__title {
       font-size: 2rem;
       line-height: 2rem;

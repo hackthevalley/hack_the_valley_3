@@ -1,6 +1,6 @@
 .sponsors {
   background-color: $grey-color;
-  padding: 8 * $spacing-unit $spacing-unit / 2;
+  padding: 6 * $spacing-unit $spacing-unit / 2;
 
   @include media-query($on-palm) {
     padding: 4 * $spacing-unit $spacing-unit / 2;

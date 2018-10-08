@@ -1,6 +1,6 @@
 .about {
   background-color: $grey-color;
-  padding: 7 * $spacing-unit $spacing-unit / 2 8 * $spacing-unit;
+  padding: 5 * $spacing-unit $spacing-unit / 2 8 * $spacing-unit;
 
   @include media-query($on-palm) {
     padding: 3 * $spacing-unit $spacing-unit / 2 4 * $spacing-unit;
@@ -26,7 +26,7 @@
   }
   
   &__body {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 
     @include media-query($on-palm) {
       font-size: 1.2rem;
