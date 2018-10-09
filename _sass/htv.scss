@@ -1,0 +1,107 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'hackthevalley';
+  src: url('../assets/hackthevalley-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../assets/hackthevalley-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../assets/hackthevalley-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+  url('../assets/hackthevalley-webfont.svg') format('svg'); /* Legacy iOS */
+}
+@import "mixins", "variables";
+
+// Global styles.
+
+.htv {
+  $self: &;
+  overflow: hidden;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 1100px;
+    padding: 1 * $spacing-unit 2 * $spacing-unit 3 * $spacing-unit;
+    &--header {
+      max-width: 1300px;
+      padding: 0 2 * $spacing-unit 1 * $spacing-unit;
+    }
+  }
+
+  &__header {
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 2 * $spacing-unit;
+    z-index: 1;
+  }
+
+  &__section {
+
+    &:not(&--show) > * { opacity: 0 }
+    padding: $spacing-unit 0;
+
+    &:nth-of-type(even) {
+      background-color: $grey-color;
+    }
+    &:nth-of-type(odd) {
+      background-color: $background-color;
+    }
+
+    &.header {
+      background-color: $brand-color;
+    }
+  }
+
+  &__leaf {
+    height: auto;
+    &--flip {
+      transform: scaleX(-1);
+    }
+
+    &--fade {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      z-index: 0;
+
+      #{ $self }__section--show & {
+        animation: htv__leaf 0.8s ease-in-out 0.2s backwards;
+        @keyframes htv__leaf {
+          from { opacity: 0; transform: translate3d(100px, -140px, 0) rotate(30deg) }
+          to { opacity: 1; transform: translate3d(0, 0, 0) rotate(0deg) }
+        }
+      }
+    }
+  }
+}
+
+@include media-query($on-laptop) {
+  .htv {
+    &__content {
+      max-width: 720px;
+    }
+  }
+}
+
+@include media-query($on-palm) {
+  .htv {
+    &__content {
+      max-width: none;
+      padding: 1 * $spacing-unit 1.2 * $spacing-unit 3 * $spacing-unit;
+    }
+    &__header {
+      font-size: 2.5rem;
+      margin-bottom: 1 * $spacing-unit;
+    }
+  }
+}
+
+// Import partials.
+@import
+  "htv/base",
+  "htv/layout",
+  "htv/home"
+;

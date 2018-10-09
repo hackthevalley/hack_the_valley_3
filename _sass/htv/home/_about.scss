@@ -1,0 +1,69 @@
+.about {
+
+  &__container {
+    text-align: center;
+  }
+  
+  &__body {
+    font-size: 1.3rem;
+  }
+
+  &__leaf {
+    &--0 {
+      width: 200px;
+      top: 20px;
+      left: 50px;
+      fill: #8DC53E;
+    }
+    &--1 {
+      width: 200px;
+      top: calc(100% - 80px);
+      left: calc(100% - 220px);
+      fill: #C79F59;
+    }
+  }
+}
+
+// Animations
+.htv__section--show {
+  .about {
+    &__heading {
+      animation: about__heading 0.8s ease-in-out 0s backwards;
+      @keyframes about__heading {
+        from { opacity: 0; transform: translate3d(0, -60px, 0) }
+        to { opacity: 1; transform: translate3d(0, 0, 0) }
+      }
+    }
+    &__body {
+      animation: about__body 0.8s ease-in-out 0s backwards;
+      @keyframes about__body {
+        from { opacity: 0; transform: translate3d(0, 60px, 0) }
+        to { opacity: 1; transform: translate3d(0, 0, 0) }
+      }
+    }
+  }
+}
+
+@include media-query($on-palm) {
+  .about {
+    &__header {
+      font-size: 2rem;
+      margin-bottom: 1 * $spacing-unit;
+    }
+    &__body {
+      font-size: 1.2rem;
+    }
+    &__leaf {
+      &--0 {
+        width: 140px;
+        top: 20px;
+        left: 50px;
+      }
+      &--1 {
+        width: 140px;
+        top: calc(100% - 80px);
+        left: calc(100% - 160px);
+      }
+    }
+  }
+}

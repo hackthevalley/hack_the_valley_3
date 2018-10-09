@@ -1,0 +1,63 @@
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+
+  // Variables
+  const intersectionTargets = document.querySelectorAll("#htv section");
+
+  // JS solution for logos (because safari :c)
+  const loadLogos = () => {
+    const logos = document.querySelectorAll("#sponsors .sponsors__link");
+    Array.from(logos).map(({ style }, i) => {
+      style.animation = `sponsors__fade 0.8s ease-in-out ${i * 0.2}s backwards`
+    })
+  }
+
+  const handleScroll = () => {
+    const top = window.pageYOffset || document.documentElement.scrollTop;
+    const diff = window.innerHeight * 0.9;
+    items = items.filter(item => {
+      if (item.top <= top + diff && !item.target.classList.contains("htv__section--show")) {
+        item.target.classList.add("htv__section--show");
+        if (item.id === "sponsors") {
+          loadLogos();
+        }
+      } else {
+        return item;
+      }
+    });
+  }
+
+  particlesJS.load('header', 'assets/particles.json'); // Setup particles
+  // Setup scrollspy
+  let items = Array.from(intersectionTargets).map(target => {
+    const { offsetTop, scrollTop, clientTop } = target;
+    const top = offsetTop - scrollTop + clientTop;
+    return { top, target };
+  });
+
+  // Get on scroll event (Using passive for better performance)
+  const onscroll = e => {
+    const top = window.pageYOffset || document.documentElement.scrollTop;
+    const { classList } = document.getElementById("nav");
+    if (top > 200) {
+      classList.add("nav-active");
+    } else {
+      classList.remove("nav-active");
+    }
+    handleScroll();
+  };
+
+  window.addEventListener("scroll", onscroll, { passive: true });
+  handleScroll();
+
+  const toggleNavigation = () => {
+    const { classList } = document.getElementById("nav");
+    if (classList.contains("nav-extended")) {
+      classList.remove("nav-extended");
+    } else {
+      classList.add("nav-extended");
+    }
+  }
+
+
+</script>
