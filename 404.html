@@ -17,7 +17,7 @@
     <meta name="description" content="UofT Scarborough is hosting a 36h Hackathon from January 11th to 13th, 2019. Get your hands on some of the top hardware and API's out there and put your creativity to the test!">
     <meta name="keywords" content="hackathon, programming, computer science, student, university, toronto, hack the valley, hack valley, utsc, uoft">
     <link rel="stylesheet" href="/assets/main.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /></head><body><main id="htv" aria-label="Content">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /></head><body><main id="htv" class="htv" aria-label="Content">
       <style type="text/css" media="screen">
   .container {
     margin: 10px auto;
@@ -53,64 +53,52 @@
     </div>
   </div>
 </footer><script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
 <script>
 
   // Variables
-  const xhr = new XMLHttpRequest();
-  const threshold = 0.1;
+  const threshold = 0.2;
   const intersectionTargets = document.querySelectorAll("#htv section");
   const intersectionObserver = new IntersectionObserver(
     entries => entries.forEach(
-      entry => {
-        if (entry.isIntersecting && entry.intersectionRatio >= threshold) {
-          intersectionObserver.unobserve(entry.target);
-          console.log(entry);
+      ({ isIntersecting, target }) => {
+        if (isIntersecting) {
+          target.classList.add("htv__section--show");
+          intersectionObserver.unobserve(target);
         }
       }
     ),
     { threshold: [threshold] }
   );
 
+  particlesJS.load('header', 'assets/particles.json'); // Setup particles
+  // Setup scrollspy
+  window.requestAnimationFrame(() =>
+    Array.from(intersectionTargets).forEach(target =>
+      intersectionObserver.observe(target)
+    )
+  )
 
-  // Sets up particle background
-  particlesJS.load('header', 'assets/particles.json');
-
-  // Gets leaf
-  xhr.addEventListener("load", () => {
-    const svg = xhr.responseXML.documentElement;
-    document.querySelectorAll(".htv__leaf").forEach(el => {
-      el.appendChild(svg);
-      el.children[0].style.fill = "#a0c642";
-    });
-  });
-
-  xhr.open("GET", "assets/leaf.svg");
-  xhr.send("");
-
-  // Intersection Observer
-  console.log(intersectionTargets);
-  Array.from(intersectionTargets).forEach(target =>
-    intersectionObserver.observe(target)
-  );
-
-  // Get on scroll event
-  window.onscroll = function(e) {
-      const navElement = document.getElementById("nav");
-      let top  = window.pageYOffset || document.documentElement.scrollTop
-      if(top > 200) {
-          navElement.classList.add("nav-active");
-      } else {
-          navElement.classList.remove("nav-active");
-      }
+  // Get on scroll event (Using passive for better performance)
+  const onscroll = e => {
+    const top = window.pageYOffset || document.documentElement.scrollTop;
+    const { classList } = document.getElementById("nav");
+    if (top > 200) {
+      classList.add("nav-active");
+    } else {
+      classList.remove("nav-active");
+    }
   };
 
-  function toggleNavigation() {
-      const navElement = document.getElementById("nav");
-      if(navElement.classList.contains("nav-extended")) {
-          navElement.classList.remove("nav-extended");
-      } else {
-          navElement.classList.add("nav-extended");
-      }
+  window.addEventListener("scroll", onscroll, { passive: true });
+
+  const toggleNavigation = () => {
+    const { classList } = document.getElementById("nav");
+    if (classList.contains("nav-extended")) {
+      classList.remove("nav-extended");
+    } else {
+      classList.add("nav-extended");
+    }
   }
 
 
