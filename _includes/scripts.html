@@ -1,22 +1,8 @@
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
 <script>
 
   // Variables
-  const threshold = 0.2;
   const intersectionTargets = document.querySelectorAll("#htv section");
-  const intersectionObserver = new IntersectionObserver(
-    entries => entries.forEach(
-      ({ isIntersecting, target }) => {
-        if (isIntersecting) {
-          target.classList.add("htv__section--show");
-          if (target.id === "sponsors") { loadLogos() }
-          intersectionObserver.unobserve(target);
-        }
-      }
-    ),
-    { threshold: [threshold] }
-  );
 
   // JS solution for logos (because safari :c)
   const loadLogos = () => {
@@ -26,13 +12,28 @@
     })
   }
 
+  const handleScroll = () => {
+    const top = window.pageYOffset || document.documentElement.scrollTop;
+    const diff = window.innerHeight * 0.9;
+    items = items.filter(item => {
+      if (item.top <= top + diff && !item.target.classList.contains("htv__section--show")) {
+        item.target.classList.add("htv__section--show");
+        if (item.id === "sponsors") {
+          loadLogos();
+        }
+      } else {
+        return item;
+      }
+    });
+  }
+
   particlesJS.load('header', 'assets/particles.json'); // Setup particles
   // Setup scrollspy
-  window.requestAnimationFrame(() =>
-    Array.from(intersectionTargets).forEach(target =>
-      intersectionObserver.observe(target)
-    )
-  )
+  let items = Array.from(intersectionTargets).map(target => {
+    const { offsetTop, scrollTop, clientTop } = target;
+    const top = offsetTop - scrollTop + clientTop;
+    return { top, target };
+  });
 
   // Get on scroll event (Using passive for better performance)
   const onscroll = e => {
@@ -43,9 +44,11 @@
     } else {
       classList.remove("nav-active");
     }
+    handleScroll();
   };
 
   window.addEventListener("scroll", onscroll, { passive: true });
+  handleScroll();
 
   const toggleNavigation = () => {
     const { classList } = document.getElementById("nav");

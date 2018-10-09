@@ -91,6 +91,7 @@
 // Animations
 .htv__section--show {
   .faq {
+
     &__heading {
       animation: faq__heading 0.8s ease-in-out 0s backwards;
       @keyframes faq__heading {

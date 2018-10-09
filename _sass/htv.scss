@@ -12,7 +12,7 @@
 
 .htv {
   $self: &;
-  overflow-x: hidden;
+  overflow: hidden;
   &__content {
     display: flex;
     flex-direction: column;
