@@ -16,7 +16,7 @@
     <meta name="copyright" content="Copyright Hack the Valley 2018">
     <meta name="description" content="UofT Scarborough is hosting a 36h Hackathon from January 11th to 13th, 2019. Get your hands on some of the top hardware and API's out there and put your creativity to the test!">
     <meta name="keywords" content="hackathon, programming, computer science, student, university, toronto, hack the valley, hack valley, utsc, uoft">
-    <link rel="stylesheet" href="/assets/main.css?v=1">
+    <link rel="stylesheet" href="/assets/main.css?v=2">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /></head><body><main id="htv" class="htv" aria-label="Content">
       <nav id="nav" class="nav">
   <ul class="nav__list">
@@ -202,7 +202,6 @@
           class="sponsors__link"
           href="https://coinberry.com?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
           target="_blank"
-          style="animation: sponsors__fade 0.8s ease-in-out 0.0s backwards; animation-play-state: paused"
           rel="noopener noreferrer"
         >
           <img
@@ -220,7 +219,6 @@
           class="sponsors__link"
           href="https://get.tech?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
           target="_blank"
-          style="animation: sponsors__fade 0.8s ease-in-out 0.2s backwards; animation-play-state: paused"
           rel="noopener noreferrer"
         >
           <img
@@ -238,7 +236,6 @@
           class="sponsors__link"
           href="https://getindico.io?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
           target="_blank"
-          style="animation: sponsors__fade 0.8s ease-in-out 0.4s backwards; animation-play-state: paused"
           rel="noopener noreferrer"
         >
           <img
@@ -256,7 +253,6 @@
           class="sponsors__link"
           href="https://hasura.io/?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
           target="_blank"
-          style="animation: sponsors__fade 0.8s ease-in-out 0.6s backwards; animation-play-state: paused"
           rel="noopener noreferrer"
         >
           <img
@@ -274,7 +270,6 @@
           class="sponsors__link"
           href="https://www.jetbrains.com/?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
           target="_blank"
-          style="animation: sponsors__fade 0.8s ease-in-out 0.8s backwards; animation-play-state: paused"
           rel="noopener noreferrer"
         >
           <img
@@ -292,7 +287,6 @@
           class="sponsors__link"
           href="https://www.redbull.com/ca-en/?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
           target="_blank"
-          style="animation: sponsors__fade 0.8s ease-in-out 1.0s backwards; animation-play-state: paused"
           rel="noopener noreferrer"
         >
           <img
@@ -310,7 +304,6 @@
           class="sponsors__link"
           href="https://balsamiq.com/?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
           target="_blank"
-          style="animation: sponsors__fade 0.8s ease-in-out 1.2s backwards; animation-play-state: paused"
           rel="noopener noreferrer"
         >
           <img
@@ -328,13 +321,29 @@
           class="sponsors__link"
           href="https://www.feminstem.com/?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
           target="_blank"
-          style="animation: sponsors__fade 0.8s ease-in-out 1.4s backwards; animation-play-state: paused"
           rel="noopener noreferrer"
         >
           <img
             class="sponsors__logo"
             src="/uploads/feminstem-logo.png"
             alt="FEM in STEM"
+            width="150px"
+            height=""
+          />
+        </a>
+
+        
+      
+        <a
+          class="sponsors__link"
+          href="https://www.fdmgroup.com/?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="sponsors__logo"
+            src="/uploads/fdm-logo.png"
+            alt="FDM Group"
             width="150px"
             height=""
           />
@@ -383,12 +392,21 @@
       ({ isIntersecting, target }) => {
         if (isIntersecting) {
           target.classList.add("htv__section--show");
+          if (target.id === "sponsors") { loadLogos() }
           intersectionObserver.unobserve(target);
         }
       }
     ),
     { threshold: [threshold] }
   );
+
+  // JS solution for logos (because safari :c)
+  const loadLogos = () => {
+    const logos = document.querySelectorAll("#sponsors .sponsors__link");
+    Array.from(logos).map(({ style }, i) => {
+      style.animation = `sponsors__fade 0.8s ease-in-out ${i * 0.2}s backwards`
+    })
+  }
 
   particlesJS.load('header', 'assets/particles.json'); // Setup particles
   // Setup scrollspy

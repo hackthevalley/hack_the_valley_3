@@ -751,9 +751,6 @@ table {
   to {
     opacity: 1;
     transform: translate3d(0, 0, 0); } }
-.htv__section--show .sponsors__link {
-  animation-play-state: running !important; }
-
 @media screen and (max-width: 800px) {
   .sponsors__link {
     width: calc(50% - 60px); } }
