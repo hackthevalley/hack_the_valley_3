@@ -1,4 +1,4 @@
-_site
+#_site remove this folder so deploy script can work
 .sass-cache
 .jekyll-metadata
 .DS_Store

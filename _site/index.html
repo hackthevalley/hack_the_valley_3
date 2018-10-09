@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <title>Hack the Valley 3</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="resources/favicon.png">
+    <meta property="og:title" content="Hack the Valley 3">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.evernote.com/l/Aq0fIM72o5hGDKEKWvv01f9JLfnAVKr87rkB/image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.evernote.com/l/Aq0fIM72o5hGDKEKWvv01f9JLfnAVKr87rkB/image.png">
+    <meta property="og:site_name" content="Hack the Valley 3">
+    <meta property="og:description" content="UofT Scarborough is hosting a 36h Hackathon from January 11th to 13th, 2019. Get your hands on some of the top hardware and API's out there and put your creativity to the test!">
+    <meta name="copyright" content="Copyright Hack the Valley 2018">
+    <meta name="description" content="UofT Scarborough is hosting a 36h Hackathon from January 11th to 13th, 2019. Get your hands on some of the top hardware and API's out there and put your creativity to the test!">
+    <meta name="keywords" content="hackathon, programming, computer science, student, university, toronto, hack the valley, hack valley, utsc, uoft">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /></head><body><main id="htv" class="htv" aria-label="Content">
+      <nav id="nav" class="nav">
+  <ul class="nav__list">
+    <li class="nav__toggle" onclick="toggleNavigation()"><i class="fa fa-angle-down" aria-hidden="true"></i></li>
+    
+      <li class="nav__item"><a href="#about">About</a></li>
+    
+      <li class="nav__item"><a href="#faq">FAQs</a></li>
+    
+      <li class="nav__item"><a href="#sponsors">Sponsors</a></li>
+    
+  </ul>
+</nav>
+
+<section id="header" class="header htv__section">
+  <div class="htv__content htv__content--header header__content">
+    <h1 class="header__title">
+      Hack The<br>Valley 3
+    </h1>
+    
+    <span class="header__subtitle">
+      January 11-13 | UofT Scarborough
+    </span>
+
+    <!--<form class="header__subscribe" action="." method="POST">-->
+      <!--<input-->
+        <!--class="header__subscribe-email"-->
+        <!--type="email"-->
+        <!--placeholder="Enter your email address"-->
+        <!--autocomplete="email"-->
+      <!--/>-->
+      <!--<input type="submit" style="display: none;" />-->
+    <!--</form>-->
+    <div class="htv__leaf--fade header__leaf header__leaf--0">
+      <svg class="htv__leaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.31 222.44">
+        <path d="M425.8,56.89l.47-1.1-.42,1Z" />
+        <path d="M71.71,109.67C269.07-91.1,426.27,55.79,426.27,55.79s-58,51.37-239.21,70.92c0,0,112.92,15.15,225.15-39.89l.09.11c16.07-7.69,97.5-47.15,132-74.11,38.32-30,23.64.73,5.52,10.32C534.09,31.43,436.07,79.66,410,92.47,286.36,338.11,30.69,164.22,0,142.12,7.82,146.68,31,153.22,71.71,109.67Z" />
+      </svg>
+    </div>
+    <div class="htv__leaf--fade header__leaf header__leaf--1">
+      <svg class="htv__leaf htv__leaf--flip" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.31 222.44">
+        <path d="M425.8,56.89l.47-1.1-.42,1Z" />
+        <path d="M71.71,109.67C269.07-91.1,426.27,55.79,426.27,55.79s-58,51.37-239.21,70.92c0,0,112.92,15.15,225.15-39.89l.09.11c16.07-7.69,97.5-47.15,132-74.11,38.32-30,23.64.73,5.52,10.32C534.09,31.43,436.07,79.66,410,92.47,286.36,338.11,30.69,164.22,0,142.12,7.82,146.68,31,153.22,71.71,109.67Z" />
+      </svg>
+    </div>
+    <div class="htv__leaf--fade header__leaf header__leaf--2">
+      <svg class="htv__leaf htv__leaf--flip" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.31 222.44">
+        <path d="M425.8,56.89l.47-1.1-.42,1Z" />
+        <path d="M71.71,109.67C269.07-91.1,426.27,55.79,426.27,55.79s-58,51.37-239.21,70.92c0,0,112.92,15.15,225.15-39.89l.09.11c16.07-7.69,97.5-47.15,132-74.11,38.32-30,23.64.73,5.52,10.32C534.09,31.43,436.07,79.66,410,92.47,286.36,338.11,30.69,164.22,0,142.12,7.82,146.68,31,153.22,71.71,109.67Z" />
+      </svg>
+    </div>
+  </div>
+
+  <div id="particles" style="pointer-events: none;"></div>
+
+  <svg class="header__wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+    <path fill="#e8e8e8" d="M421.9,6.5c22.6-2.5,51.5,0.4,75.5,5.3c23.6,4.9,70.9,23.5,100.5,35.7c75.8,32.2,133.7,44.5,192.6,49.7
+  	c23.6,2.1,48.7,3.5,103.4-2.5c54.7-6,106.2-25.6,106.2-25.6V0H0v30.3c0,0,72,32.6,158.4,30.5c39.2-0.7,92.8-6.7,134-22.4
+  	c21.2-8.1,52.2-18.2,79.7-24.2C399.3,7.9,411.6,7.5,421.9,6.5z" />
+  </svg>
+</section>
+
+<section id="about" class="about htv__section">
+  <div class="htv__content about__container">
+    <h2 class="htv__header about__heading">
+      About
+    </h2>
+    <p class="about__body">
+      Join 500 innovative and creative developers, designers, and creators for <strong>36 hours of hacking</strong>. You'll get access to some of the best hardware and APIs on the market. Plus get to meet some experienced and awesome mentors! All this in just one weekend? I know, it's hard to believe. <br> <br> Remember, you don't need to be a pro to attend. So, if this is your first hackathon, we can't wait to expose you to the incomparable world of creation.
+    </p>
+    <div class="htv__leaf--fade about__leaf about__leaf--0">
+      <svg class="htv__leaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.31 222.44">
+        <path d="M425.8,56.89l.47-1.1-.42,1Z" />
+        <path d="M71.71,109.67C269.07-91.1,426.27,55.79,426.27,55.79s-58,51.37-239.21,70.92c0,0,112.92,15.15,225.15-39.89l.09.11c16.07-7.69,97.5-47.15,132-74.11,38.32-30,23.64.73,5.52,10.32C534.09,31.43,436.07,79.66,410,92.47,286.36,338.11,30.69,164.22,0,142.12,7.82,146.68,31,153.22,71.71,109.67Z" />
+      </svg>
+    </div>
+    <div class="htv__leaf--fade about__leaf about__leaf--1">
+      <svg class="htv__leaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.31 222.44">
+        <path d="M425.8,56.89l.47-1.1-.42,1Z" />
+        <path d="M71.71,109.67C269.07-91.1,426.27,55.79,426.27,55.79s-58,51.37-239.21,70.92c0,0,112.92,15.15,225.15-39.89l.09.11c16.07-7.69,97.5-47.15,132-74.11,38.32-30,23.64.73,5.52,10.32C534.09,31.43,436.07,79.66,410,92.47,286.36,338.11,30.69,164.22,0,142.12,7.82,146.68,31,153.22,71.71,109.67Z" />
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq htv__section">
+  <div class="htv__content faq__container">
+    <h2 class="htv__header faq__heading">FAQs</h2>
+    <div class="faq__items">
+      
+        <div class="faq__column">
+          
+            <div class="faq__qa faq__qa--1 faq__qa--red">
+              <h3 class="faq__qa_heading">Where is it?</h3>
+              <p class="faq__qa_body">University of Toronto Scarborough, IC Instructional Centre, 1095 Military Trail, Scarborough, ON M1C 1A4, Canada</p>
+              
+              
+
+            </div>
+          
+            <div class="faq__qa faq__qa--2 faq__qa--brown">
+              <h3 class="faq__qa_heading">Who can apply?</h3>
+              <p class="faq__qa_body">Any college or university student is eligible to apply. Application will open soon, please enter your email above to subscribe to updates.</p>
+              
+              
+
+            </div>
+          
+            <div class="faq__qa faq__qa--3 faq__qa--green">
+              <h3 class="faq__qa_heading">Once I am accepted, what do I need to bring?</h3>
+              <p class="faq__qa_body">You’ll need: A laptop and charger. Everything else is optional. However, we strongly encourage you to bring a sleeping bag, pillows, toiletries, and a couple of changes of clothes. <br/><br/> You won’t need: An idea, or a team. You can create your own team (teams of 4 recommended) during the hackathon, and generate some amazing creations along the way. You also don’t need to worry about food, we’ve got you covered.</p>
+              
+              
+
+            </div>
+          
+        </div>
+      
+        <div class="faq__column">
+          
+            <div class="faq__qa faq__qa--1 faq__qa--green">
+              <h3 class="faq__qa_heading">When/where can I hack?</h3>
+              <p class="faq__qa_body">Hack The Valley will start with the kick-off ceremony. There will be events planned throughout the day for those who arrive early. A detailed schedule of events and locations will be posted later. All work eligible for prizes must be completed between Friday night after the kick-off and Sunday morning at the hacking location (TBA). We will not accept any projects that were started prior to the hackathon (e.g. continuations of personal projects).</p>
+              
+              
+
+            </div>
+          
+            <div class="faq__qa faq__qa--2 faq__qa--red">
+              <h3 class="faq__qa_heading">How much will Hack the Valley cost me?</h3>
+              <p class="faq__qa_body">It’s completely free, so don’t worry! We'll provide you with a weekend's worth of meals, drinks, and snacks and a place to crash when you need a break from coding. In fact, you’ll probably walk away loaded with all the swag that you’ll get at Hack the Valley.</p>
+              
+              
+
+            </div>
+          
+        </div>
+      
+        <div class="faq__column">
+          
+            <div class="faq__qa faq__qa--1 faq__qa--brown">
+              <h3 class="faq__qa_heading">How is Hack The Valley run?</h3>
+              <p class="faq__qa_body">Hack The Valley almost entirely by (sleep-deprived) University of Toronto students, with some advice and assistance from our friends at Department of Student Life (DSL), Association of Mathematical and Computer Science Students (AMACSS) and Computer Science Enrichment Club (CSEC). One hundred percent of the funding for Hack the Valley comes from corporate sponsor donations.</p>
+              
+              
+
+            </div>
+          
+            <div class="faq__qa faq__qa--2 faq__qa--green">
+              <h3 class="faq__qa_heading">What can I win?</h3>
+              <p class="faq__qa_body">It’s not about winning-it’s about exploring your passion while making great friends (which if you ask us, is a BONUS!!!). But if you’re a fan of winning, we’ve got you covered. We’ve got some great prizes in stock (will be announced soon). A panel of professional judges will select the best three hacks based on the following criteria: creativity, functionality, level of technical difficulty and quality. Most sponsors like to offer their own prizes as well for specific categories which are evaluated themselves.</p>
+              
+              
+
+            </div>
+          
+        </div>
+      
+    </div>
+    <div class="htv__leaf--fade faq__leaf faq__leaf--0">
+      <svg class="htv__leaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.31 222.44">
+        <path d="M425.8,56.89l.47-1.1-.42,1Z" />
+        <path d="M71.71,109.67C269.07-91.1,426.27,55.79,426.27,55.79s-58,51.37-239.21,70.92c0,0,112.92,15.15,225.15-39.89l.09.11c16.07-7.69,97.5-47.15,132-74.11,38.32-30,23.64.73,5.52,10.32C534.09,31.43,436.07,79.66,410,92.47,286.36,338.11,30.69,164.22,0,142.12,7.82,146.68,31,153.22,71.71,109.67Z" />
+      </svg>
+    </div>
+    <div class="htv__leaf--fade faq__leaf faq__leaf--1">
+      <svg class="htv__leaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.31 222.44">
+        <path d="M425.8,56.89l.47-1.1-.42,1Z" />
+        <path d="M71.71,109.67C269.07-91.1,426.27,55.79,426.27,55.79s-58,51.37-239.21,70.92c0,0,112.92,15.15,225.15-39.89l.09.11c16.07-7.69,97.5-47.15,132-74.11,38.32-30,23.64.73,5.52,10.32C534.09,31.43,436.07,79.66,410,92.47,286.36,338.11,30.69,164.22,0,142.12,7.82,146.68,31,153.22,71.71,109.67Z" />
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="sponsors" class="sponsors htv__section">
+  <div class="htv__content">
+    <h2 class="htv__header sponsors__heading">
+      Sponsors
+    </h2>
+    <div class="sponsors__container">
+      
+        <a
+          class="sponsors__link"
+          href="https://coinberry.com?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
+          target="_blank"
+          style="animation: sponsors__fade 0.8s ease-in-out 0.0s backwards; animation-play-state: paused"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="sponsors__logo"
+            src="/uploads/coinberry-logo.png"
+            alt="Coinberry"
+            width="210px"
+            height=""
+          />
+        </a>
+
+        
+      
+        <a
+          class="sponsors__link"
+          href="https://get.tech?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
+          target="_blank"
+          style="animation: sponsors__fade 0.8s ease-in-out 0.2s backwards; animation-play-state: paused"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="sponsors__logo"
+            src="/uploads/tech-domains-logo.png"
+            alt=".tech Domains"
+            width="130px"
+            height=""
+          />
+        </a>
+
+        
+      
+        <a
+          class="sponsors__link"
+          href="https://getindico.io?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
+          target="_blank"
+          style="animation: sponsors__fade 0.8s ease-in-out 0.4s backwards; animation-play-state: paused"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="sponsors__logo"
+            src="/uploads/indico-logo.png"
+            alt="Indico"
+            width="130px"
+            height=""
+          />
+        </a>
+
+        
+      
+        <a
+          class="sponsors__link"
+          href="https://hasura.io/?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
+          target="_blank"
+          style="animation: sponsors__fade 0.8s ease-in-out 0.6s backwards; animation-play-state: paused"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="sponsors__logo"
+            src="/uploads/hasura.svg"
+            alt="Hasura"
+            width="160px"
+            height=""
+          />
+        </a>
+
+        
+      
+        <a
+          class="sponsors__link"
+          href="https://www.jetbrains.com/?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
+          target="_blank"
+          style="animation: sponsors__fade 0.8s ease-in-out 0.8s backwards; animation-play-state: paused"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="sponsors__logo"
+            src="/uploads/jetbrains.png"
+            alt="Hasura"
+            width="100px"
+            height=""
+          />
+        </a>
+
+        
+      
+        <a
+          class="sponsors__link"
+          href="https://www.redbull.com/ca-en/?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
+          target="_blank"
+          style="animation: sponsors__fade 0.8s ease-in-out 1.0s backwards; animation-play-state: paused"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="sponsors__logo"
+            src="/uploads/redbull.png"
+            alt="Red Bull"
+            width="120px"
+            height=""
+          />
+        </a>
+
+        
+      
+        <a
+          class="sponsors__link"
+          href="https://balsamiq.com/?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
+          target="_blank"
+          style="animation: sponsors__fade 0.8s ease-in-out 1.2s backwards; animation-play-state: paused"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="sponsors__logo"
+            src="/uploads/balsamiq.png"
+            alt="Red Bull"
+            width="140px"
+            height=""
+          />
+        </a>
+
+        
+      
+        <a
+          class="sponsors__link"
+          href="https://www.feminstem.com/?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
+          target="_blank"
+          style="animation: sponsors__fade 0.8s ease-in-out 1.4s backwards; animation-play-state: paused"
+          rel="noopener noreferrer"
+        >
+          <img
+            class="sponsors__logo"
+            src="/uploads/feminstem-logo.png"
+            alt="FEM in STEM"
+            width="150px"
+            height=""
+          />
+        </a>
+
+        
+      
+    </div>
+    <div class="htv__leaf--fade faq__leaf faq__leaf--0">
+      <svg class="htv__leaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.31 222.44">
+        <path d="M425.8,56.89l.47-1.1-.42,1Z" />
+        <path d="M71.71,109.67C269.07-91.1,426.27,55.79,426.27,55.79s-58,51.37-239.21,70.92c0,0,112.92,15.15,225.15-39.89l.09.11c16.07-7.69,97.5-47.15,132-74.11,38.32-30,23.64.73,5.52,10.32C534.09,31.43,436.07,79.66,410,92.47,286.36,338.11,30.69,164.22,0,142.12,7.82,146.68,31,153.22,71.71,109.67Z" />
+      </svg>
+    </div>
+    <div class="htv__leaf--fade faq__leaf faq__leaf--1">
+      <svg class="htv__leaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.31 222.44">
+        <path d="M425.8,56.89l.47-1.1-.42,1Z" />
+        <path d="M71.71,109.67C269.07-91.1,426.27,55.79,426.27,55.79s-58,51.37-239.21,70.92c0,0,112.92,15.15,225.15-39.89l.09.11c16.07-7.69,97.5-47.15,132-74.11,38.32-30,23.64.73,5.52,10.32C534.09,31.43,436.07,79.66,410,92.47,286.36,338.11,30.69,164.22,0,142.12,7.82,146.68,31,153.22,71.71,109.67Z" />
+      </svg>
+    </div>
+  </div>
+</section>
+
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Hack the Valley 3</h2>
+
+    <div class="footer-col-wrapper">
+
+      <div class="footer-col footer-col-12"><ul class="social-media-list"><li><a href="https://www.facebook.com/hackthevalley"><svg class="svg-icon"><use xlink:href="/assets/htv-social-icons.svg#facebook"></use></svg> <span class="username">hackthevalley</span></a></li><li><a href="https://github.com/hackthevalley"><svg class="svg-icon"><use xlink:href="/assets/htv-social-icons.svg#github"></use></svg> <span class="username">hackthevalley</span></a></li></ul>
+</div>
+    </div>
+  </div>
+</footer><script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://polyfill.io/v2/polyfill.min.js?features=IntersectionObserver"></script>
+<script>
+
+  // Variables
+  const threshold = 0.2;
+  const intersectionTargets = document.querySelectorAll("#htv section");
+  const intersectionObserver = new IntersectionObserver(
+    entries => entries.forEach(
+      ({ isIntersecting, target }) => {
+        if (isIntersecting) {
+          target.classList.add("htv__section--show");
+          intersectionObserver.unobserve(target);
+        }
+      }
+    ),
+    { threshold: [threshold] }
+  );
+
+  particlesJS.load('header', 'assets/particles.json'); // Setup particles
+  // Setup scrollspy
+  window.requestAnimationFrame(() =>
+    Array.from(intersectionTargets).forEach(target =>
+      intersectionObserver.observe(target)
+    )
+  )
+
+  // Get on scroll event (Using passive for better performance)
+  const onscroll = e => {
+    const top = window.pageYOffset || document.documentElement.scrollTop;
+    const { classList } = document.getElementById("nav");
+    if (top > 200) {
+      classList.add("nav-active");
+    } else {
+      classList.remove("nav-active");
+    }
+  };
+
+  window.addEventListener("scroll", onscroll, { passive: true });
+
+  const toggleNavigation = () => {
+    const { classList } = document.getElementById("nav");
+    if (classList.contains("nav-extended")) {
+      classList.remove("nav-extended");
+    } else {
+      classList.add("nav-extended");
+    }
+  }
+
+
+</script></body>
+</html>
