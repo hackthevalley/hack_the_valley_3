@@ -17,14 +17,15 @@
     { threshold: [threshold] }
   );
 
-  particlesJS.load('header', 'assets/particles.json');
+  particlesJS.load('header', 'assets/particles.json'); // Setup particles
+  // Setup scrollspy
   window.requestAnimationFrame(() =>
     Array.from(intersectionTargets).forEach(target =>
       intersectionObserver.observe(target)
     )
   )
 
-  // Get on scroll event
+  // Get on scroll event (Using passive for better performance)
   const onscroll = e => {
     const top = window.pageYOffset || document.documentElement.scrollTop;
     const { classList } = document.getElementById("nav");
