@@ -5,7 +5,7 @@
   src: url("../assets/hackthevalley-webfont.woff2") format("woff2"), url("../assets/hackthevalley-webfont.woff") format("woff"), url("../assets/hackthevalley-webfont.svg") format("svg");
   /* Legacy iOS */ }
 .htv {
-  overflow-x: hidden; }
+  overflow: hidden; }
   .htv__content {
     display: flex;
     flex-direction: column;
