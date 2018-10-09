@@ -11,16 +11,34 @@
 // Global styles.
 
 .htv {
+  $self: &;
+  overflow-x: hidden;
   &__content {
+    display: flex;
+    flex-direction: column;
     margin: auto;
     position: relative;
     width: 100%;
     box-sizing: border-box;
-    max-width: 1500px;
-    padding: 0 2 * $spacing-unit;
+    max-width: 1100px;
+    padding: 1 * $spacing-unit 2 * $spacing-unit 3 * $spacing-unit;
+    &--header {
+      max-width: 1300px;
+      padding: 0 2 * $spacing-unit 1 * $spacing-unit;
+    }
+  }
+
+  &__header {
+    font-size: 4rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 2 * $spacing-unit;
+    z-index: 1;
   }
 
   &__section {
+
     &:not(&--show) > * { opacity: 0 }
     padding: $spacing-unit 0;
 
@@ -47,11 +65,14 @@
       top: 0;
       left: 0;
       margin: 0;
-      z-index: 1;
-      animation: htv__leaf 0.8s ease-in-out 0.2s backwards;
-      @keyframes htv__leaf {
-        from { opacity: 0; transform: translate3d(100px, -140px, 0) rotate(30deg) }
-        to { opacity: 1; transform: translate3d(0, 0, 0) rotate(0deg) }
+      z-index: 0;
+
+      #{ $self }__section--show & {
+        animation: htv__leaf 0.8s ease-in-out 0.2s backwards;
+        @keyframes htv__leaf {
+          from { opacity: 0; transform: translate3d(100px, -140px, 0) rotate(30deg) }
+          to { opacity: 1; transform: translate3d(0, 0, 0) rotate(0deg) }
+        }
       }
     }
   }
@@ -69,6 +90,11 @@
   .htv {
     &__content {
       max-width: none;
+      padding: 1 * $spacing-unit 1.2 * $spacing-unit 3 * $spacing-unit;
+    }
+    &__header {
+      font-size: 2.5rem;
+      margin-bottom: 1 * $spacing-unit;
     }
   }
 }

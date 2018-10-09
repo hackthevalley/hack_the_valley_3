@@ -1,36 +1,27 @@
 .faq {
 
-  &__container {
-    max-width: 1200px;
-    margin: auto;
+  &__items {
     display: flex;
-
-    @include media-query($on-palm) {
-      display: block;
-    }
-  }
-
-  &__heading {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 4rem;
-    font-weight: bolder;
-    margin-bottom: 2 * $spacing-unit;
-    
-    @include media-query($on-palm) {
-      font-size: 2rem;
-      margin-bottom: 1 * $spacing-unit;
-    }
   }
 
   &__column {
     width: 0;
     flex-grow: 1;
-    padding: 0 20px;
+    padding: 0 10px;
+  }
 
-    @include media-query($on-palm) {
-      width: 100%;
-      padding: 0;
+  &__leaf {
+    &--0 {
+      width: 200px;
+      top: 20px;
+      left: 50px;
+      fill: #8DC53E;
+    }
+    &--1 {
+      width: 200px;
+      top: calc(100% - 80px);
+      left: calc(100% - 220px);
+      fill: #C79F59;
     }
   }
 
@@ -38,10 +29,17 @@
     border-radius: 10px;
     color: white;
     padding: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    &--red {
+      background-color: #f64d34;
+    }
 
-    @include media-query($on-palm) {
-      margin-bottom: 20px;
+    &--green {
+      background-color: #7bbe48;
+    }
+
+    &--brown {
+      background-color: #c29356;
     }
 
     &_heading {
@@ -85,6 +83,63 @@
 
       &:visited {
         color: white;
+      }
+    }
+  }
+}
+
+// Animations
+.htv__section--show {
+  .faq {
+    &__heading {
+      animation: faq__heading 0.8s ease-in-out 0s backwards;
+      @keyframes faq__heading {
+        from { opacity: 0; transform: translate3d(0, -60px, 0) }
+        to { opacity: 1; transform: translate3d(0, 0, 0) }
+      }
+    }
+    &__qa {
+      &--1 {
+        animation: faq__qa 0.8s ease-in-out 0s backwards;
+      }
+      &--2 {
+        animation: faq__qa 0.8s ease-in-out 0.4s backwards;
+      }
+      &--3 {
+        animation: faq__qa 0.8s ease-in-out 0.8s backwards;
+      }
+      @keyframes faq__qa {
+        from { opacity: 0; transform: translate3d(0, -40px, 0) }
+        to { opacity: 1; transform: translate3d(0, 0, 0) }
+      }
+    }
+  }
+}
+
+@include media-query($on-laptop) {
+  .faq {
+    &__items {
+      flex-direction: column;
+    }
+    &__column {
+      width: 100%;
+      padding: 0;
+    }
+  }
+}
+
+@include media-query($on-palm) {
+  .faq {
+    &__leaf {
+      &--0 {
+        width: 140px;
+        top: 20px;
+        left: 50px;
+      }
+      &--1 {
+        width: 140px;
+        top: calc(100% - 80px);
+        left: calc(100% - 160px);
       }
     }
   }

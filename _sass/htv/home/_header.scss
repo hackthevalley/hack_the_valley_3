@@ -44,6 +44,7 @@
     &--1 {
       fill: #C79F59;
       top: 280px;
+      left: 30px;
       width: 160px;
     }
     &--2 {
@@ -121,7 +122,7 @@
 
 @include media-query($on-laptop) {
   .header {
-    padding-top: 4 * $spacing-unit;
+    padding: 4 * $spacing-unit 0 4 * $spacing-unit;
     &__title {
       font-size: 4rem;
       line-height: 4rem;
@@ -153,7 +154,7 @@
 
 @include media-query($on-palm) {
   .header {
-    padding: 5 * $spacing-unit 0;
+    padding: 4 * $spacing-unit 0 4 * $spacing-unit;
     text-align: center;
     &__title {
       font-size: 2rem;
