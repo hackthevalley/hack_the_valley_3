@@ -72,7 +72,7 @@
     items = items.filter(item => {
       if (item.top <= top + diff && !item.target.classList.contains("htv__section--show")) {
         item.target.classList.add("htv__section--show");
-        if (item.id === "sponsors") {
+        if (item.target.id === "sponsors") {
           loadLogos();
         }
       } else {
