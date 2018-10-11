@@ -36,15 +36,15 @@
     <ul class="nav__items">
       
         <li class="nav__item">
-          <a onclick="toggleNavigation(false)" class="nav__item-link" href="#about">About</a>
+          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link" href="#about">About</a>
         </li>
       
         <li class="nav__item">
-          <a onclick="toggleNavigation(false)" class="nav__item-link" href="#faq">FAQs</a>
+          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link" href="#faq">FAQs</a>
         </li>
       
         <li class="nav__item">
-          <a onclick="toggleNavigation(false)" class="nav__item-link" href="#sponsors">Sponsors</a>
+          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link" href="#sponsors">Sponsors</a>
         </li>
       
     </ul>
@@ -455,8 +455,19 @@
 </footer><script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
 
-  // Variables
+  const duration = 80;
+  const offset = 86;
   const intersectionTargets = document.querySelectorAll("#htv section");
+
+  const normalcdf = (Z) => {
+    const X = (Z - (duration / 2)) / (duration / 10);
+    const T = 1 / (1 + .2316419 * Math.abs(X));
+    const D = .3989423 * Math.exp(-X * X / 2);
+    const P = D * T * (.3193815 + T * (-.3565638 + T * (1.781478 + T * (-1.821256 + T * 1.330274))));
+    return Math.round(100000 * (X > 0 ? 1 - P : P)) / 100000;
+  }
+  const newArray = new Array(duration).fill(0);
+  const curve = newArray.map((i, key) => normalcdf(key));
 
   // JS solution for logos (because safari :c)
   const loadLogos = () => {
@@ -506,16 +517,50 @@
 
   const toggleNavigation = (state) => {
     const { classList } = document.getElementById("nav");
-    switch(state) {
+    switch (state) {
       case true:
         classList.add("nav--extended"); break;
       case false:
         classList.remove("nav--extended"); break;
       default:
-        classList.toggle("nav--extended");
+        classList.toggle("nav--extended"); break;
     }
   }
 
 
-</script></body>
+  let i = 0;
+  let diff = 0;
+  let from = 0;
+  let bounce = false;
+
+  const step = () => {
+    window.scrollTo(0, (curve[i] * diff) + from);
+    i++;
+    if (i < duration) {
+      window.requestAnimationFrame(step);
+    } else {
+      bounce = false;
+    }
+  }
+
+  const scrollTo = (el) => {
+    el.preventDefault();
+    if (!bounce) {
+      history.pushState("", "", el.target.href);
+      const target = document.getElementById(location.hash.slice(1));
+      from = window.pageYOffset || document.documentElement.scrollTop;
+      const to = target.offsetTop - target.scrollTop + target.clientTop - offset;
+
+      diff = to - from;
+      i = 0;
+      step();
+      bounce = true;
+    }
+  }
+
+  Array.from(document.querySelectorAll(".nav__item-link")).forEach(el => {
+    el.addEventListener("click", scrollTo);
+  })
+</script>
+</body>
 </html>

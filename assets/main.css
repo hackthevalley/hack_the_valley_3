@@ -407,6 +407,7 @@ table {
     display: none;
     z-index: 4;
     width: 30px;
+    cursor: pointer;
     margin-left: auto;
     flex-direction: column; }
   .nav__bar {
