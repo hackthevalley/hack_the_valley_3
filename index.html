@@ -156,7 +156,7 @@ sponsors:
     <ul class="nav__items">
       {% for nav_item in page.nav %}
         <li class="nav__item">
-          <a onclick="toggleNavigation(false)" class="nav__item-link" href="{{ nav_item.link }}">{{ nav_item.text }}</a>
+          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link" href="{{ nav_item.link }}">{{ nav_item.text }}</a>
         </li>
       {% endfor %}
     </ul>
