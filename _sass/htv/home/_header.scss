@@ -122,7 +122,7 @@
 
 @include media-query($on-laptop) {
   .header {
-    padding: 4 * $spacing-unit 0 4 * $spacing-unit;
+    padding: 6 * $spacing-unit 0 6 * $spacing-unit;
     &__title {
       font-size: 4rem;
       line-height: 4rem;
