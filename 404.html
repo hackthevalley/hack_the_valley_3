@@ -16,7 +16,7 @@
     <meta name="copyright" content="Copyright Hack the Valley 2018">
     <meta name="description" content="UofT Scarborough is hosting a 36h Hackathon from January 11th to 13th, 2019. Get your hands on some of the top hardware and API's out there and put your creativity to the test!">
     <meta name="keywords" content="hackathon, programming, computer science, student, university, toronto, hack the valley, hack valley, utsc, uoft">
-    <link rel="stylesheet" href="/assets/main.css?v=3">
+    <link rel="stylesheet" href="/assets/main.css?v=4">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /></head><body><main id="htv" class="htv" aria-label="Content">
       <style type="text/css" media="screen">
   .container {
@@ -93,10 +93,10 @@
   const onscroll = e => {
     const top = window.pageYOffset || document.documentElement.scrollTop;
     const { classList } = document.getElementById("nav");
-    if (top > 200) {
-      classList.add("nav-active");
+    if (top > 100) {
+      classList.add("nav--active");
     } else {
-      classList.remove("nav-active");
+      classList.remove("nav--active");
     }
     handleScroll();
   };
@@ -104,12 +104,15 @@
   window.addEventListener("scroll", onscroll, { passive: true });
   handleScroll();
 
-  const toggleNavigation = () => {
+  const toggleNavigation = (state) => {
     const { classList } = document.getElementById("nav");
-    if (classList.contains("nav-extended")) {
-      classList.remove("nav-extended");
-    } else {
-      classList.add("nav-extended");
+    switch(state) {
+      case true:
+        classList.add("nav--extended"); break;
+      case false:
+        classList.remove("nav--extended"); break;
+      default:
+        classList.toggle("nav--extended");
     }
   }
 

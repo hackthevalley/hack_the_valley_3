@@ -16,9 +16,9 @@
     <meta name="copyright" content="Copyright Hack the Valley 2018">
     <meta name="description" content="UofT Scarborough is hosting a 36h Hackathon from January 11th to 13th, 2019. Get your hands on some of the top hardware and API's out there and put your creativity to the test!">
     <meta name="keywords" content="hackathon, programming, computer science, student, university, toronto, hack the valley, hack valley, utsc, uoft">
-    <link rel="stylesheet" href="/assets/main.css?v=3">
+    <link rel="stylesheet" href="/assets/main.css?v=4">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /></head><body><main id="htv" class="htv" aria-label="Content">
-      <nav id="nav" class="nav">
+      <!-- <nav id="nav" class="nav">
   <ul class="nav__list">
     <li class="nav__toggle" onclick="toggleNavigation()"><i class="fa fa-angle-down" aria-hidden="true"></i></li>
     
@@ -29,17 +29,39 @@
       <li class="nav__item"><a href="#sponsors">Sponsors</a></li>
     
   </ul>
+</nav> -->
+
+<nav id="nav" class="nav">
+  <div class="nav__wrapper">
+    <ul class="nav__items">
+      
+        <li class="nav__item">
+          <a onclick="toggleNavigation(false)" class="nav__item-link" href="#about">About</a>
+        </li>
+      
+        <li class="nav__item">
+          <a onclick="toggleNavigation(false)" class="nav__item-link" href="#faq">FAQs</a>
+        </li>
+      
+        <li class="nav__item">
+          <a onclick="toggleNavigation(false)" class="nav__item-link" href="#sponsors">Sponsors</a>
+        </li>
+      
+    </ul>
+    <div class="nav__menu" onclick="toggleNavigation()">
+      <div class="nav__bar nav__bar--top"></div>
+      <div class="nav__bar nav__bar--mid"></div>
+      <div class="nav__bar nav__bar--bot"></div>
+    </div>
+  </div>
 </nav>
 
 <section id="header" class="header htv__section">
   <div class="htv__content htv__content--header header__content">
-    <h1 class="header__title">
-      Hack The<br>Valley 3
-    </h1>
-    
-    <span class="header__subtitle">
-      January 11-13 | UofT Scarborough
-    </span>
+
+    <h1 class="header__title">Hack The<br>Valley 3</h1>
+
+    <span class="header__subtitle">January 11-13 | UofT Scarborough</span>
 
     <!--<form class="header__subscribe" action="." method="POST">-->
       <!--<input-->
@@ -81,12 +103,11 @@
 
 <section id="about" class="about htv__section">
   <div class="htv__content about__container">
-    <h2 class="htv__header about__heading">
-      About
-    </h2>
-    <p class="about__body">
-      Join 500 innovative and creative developers, designers, and creators for <strong>36 hours of hacking</strong>. You'll get access to some of the best hardware and APIs on the market. Plus get to meet some experienced and awesome mentors! All this in just one weekend? I know, it's hard to believe. <br> <br> Remember, you don't need to be a pro to attend. So, if this is your first hackathon, we can't wait to expose you to the incomparable world of creation.
-    </p>
+
+    <h2 class="htv__header about__heading">About</h2>
+
+    <p class="about__body">Join 500 innovative and creative developers, designers, and creators for <strong>36 hours of hacking</strong>. You'll get access to some of the best hardware and APIs on the market. Plus get to meet some experienced and awesome mentors! All this in just one weekend? I know, it's hard to believe. <br> <br> Remember, you don't need to be a pro to attend. So, if this is your first hackathon, we can't wait to expose you to the incomparable world of creation.</p>
+
     <div class="htv__leaf--fade about__leaf about__leaf--0">
       <svg class="htv__leaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.31 222.44">
         <path d="M425.8,56.89l.47-1.1-.42,1Z" />
@@ -193,9 +214,7 @@
 
 <section id="sponsors" class="sponsors htv__section">
   <div class="htv__content">
-    <h2 class="htv__header sponsors__heading">
-      Sponsors
-    </h2>
+    <h2 class="htv__header sponsors__heading">Sponsors</h2>
     <div class="sponsors__container">
       
         <a
@@ -438,10 +457,10 @@
   const onscroll = e => {
     const top = window.pageYOffset || document.documentElement.scrollTop;
     const { classList } = document.getElementById("nav");
-    if (top > 200) {
-      classList.add("nav-active");
+    if (top > 100) {
+      classList.add("nav--active");
     } else {
-      classList.remove("nav-active");
+      classList.remove("nav--active");
     }
     handleScroll();
   };
@@ -449,12 +468,15 @@
   window.addEventListener("scroll", onscroll, { passive: true });
   handleScroll();
 
-  const toggleNavigation = () => {
+  const toggleNavigation = (state) => {
     const { classList } = document.getElementById("nav");
-    if (classList.contains("nav-extended")) {
-      classList.remove("nav-extended");
-    } else {
-      classList.add("nav-extended");
+    switch(state) {
+      case true:
+        classList.add("nav--extended"); break;
+      case false:
+        classList.remove("nav--extended"); break;
+      default:
+        classList.toggle("nav--extended");
     }
   }
 
