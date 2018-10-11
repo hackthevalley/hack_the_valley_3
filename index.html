@@ -131,24 +131,42 @@ sponsors:
       width: 160px
 ---
 
-<nav id="nav" class="nav">
+<!-- <nav id="nav" class="nav">
   <ul class="nav__list">
     <li class="nav__toggle" onclick="toggleNavigation()"><i class="fa fa-angle-down" aria-hidden="true"></i></li>
     {% for nav_item in page.nav %}
       <li class="nav__item"><a href="{{ nav_item.link }}">{{ nav_item.text }}</a></li>
     {% endfor %}
   </ul>
+</nav> -->
+
+<nav id="nav" class="nav">
+  <div class="nav__wrapper">
+    <ul class="nav__items">
+      {% for nav_item in page.nav %}
+        <li class="nav__item">
+          <a onclick="toggleNavigation(false)" class="nav__item-link" href="{{ nav_item.link }}">{{ nav_item.text }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="nav__menu" onclick="toggleNavigation()">
+      <div class="nav__bar nav__bar--top"></div>
+      <div class="nav__bar nav__bar--mid"></div>
+      <div class="nav__bar nav__bar--bot"></div>
+    </div>
+  </div>
 </nav>
 
 <section id="header" class="header htv__section">
   <div class="htv__content htv__content--header header__content">
-    <h1 class="header__title">
-      {{ page.header.headingText }}
-    </h1>
-    
-    <span class="header__subtitle">
-      {{ page.header.subtitleText }}
-    </span>
+
+    <h1 class="header__title">{{
+      page.header.headingText
+    }}</h1>
+
+    <span class="header__subtitle">{{
+      page.header.subtitleText
+    }}</span>
 
     <!--<form class="header__subscribe" action="." method="POST">-->
       <!--<input-->
@@ -190,12 +208,15 @@ sponsors:
 
 <section id="about" class="about htv__section">
   <div class="htv__content about__container">
-    <h2 class="htv__header about__heading">
-      {{ page.about.headingText }}
-    </h2>
-    <p class="about__body">
-      {{ page.about.bodyText }}
-    </p>
+
+    <h2 class="htv__header about__heading">{{
+      page.about.headingText
+    }}</h2>
+
+    <p class="about__body">{{
+      page.about.bodyText
+    }}</p>
+
     <div class="htv__leaf--fade about__leaf about__leaf--0">
       <svg class="htv__leaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.31 222.44">
         <path d="M425.8,56.89l.47-1.1-.42,1Z" />
@@ -227,9 +248,9 @@ sponsors:
                   class="faq__qa_link"
                   href="{{ item.linkHref }}"
                   rel="noopener noreferrer"
-                >
-                  {{ item.linkText }}
-                </a>
+                >{{
+                  item.linkText
+                }}</a>
               {% endif %}
 
             </div>
@@ -254,9 +275,9 @@ sponsors:
 
 <section id="sponsors" class="sponsors htv__section">
   <div class="htv__content">
-    <h2 class="htv__header sponsors__heading">
-      {{ page.sponsors.headingText }}
-    </h2>
+    <h2 class="htv__header sponsors__heading">{{
+      page.sponsors.headingText
+    }}</h2>
     <div class="sponsors__container">
       {% for logo in page.sponsors.logos %}
         <a

@@ -39,10 +39,10 @@
   const onscroll = e => {
     const top = window.pageYOffset || document.documentElement.scrollTop;
     const { classList } = document.getElementById("nav");
-    if (top > 200) {
-      classList.add("nav-active");
+    if (top > 100) {
+      classList.add("nav--active");
     } else {
-      classList.remove("nav-active");
+      classList.remove("nav--active");
     }
     handleScroll();
   };
@@ -50,12 +50,15 @@
   window.addEventListener("scroll", onscroll, { passive: true });
   handleScroll();
 
-  const toggleNavigation = () => {
+  const toggleNavigation = (state) => {
     const { classList } = document.getElementById("nav");
-    if (classList.contains("nav-extended")) {
-      classList.remove("nav-extended");
-    } else {
-      classList.add("nav-extended");
+    switch(state) {
+      case true:
+        classList.add("nav--extended"); break;
+      case false:
+        classList.remove("nav--extended"); break;
+      default:
+        classList.toggle("nav--extended");
     }
   }
 
