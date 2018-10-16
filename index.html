@@ -8,13 +8,19 @@ header:
 
 nav:
   - text: About
+    scroll: true
     link: "#about"
   - text: FAQs
+    scroll: true
     link: "#faq"
   - text: Sponsors
+    scroll: true
     link: "#sponsors"
   - text: Partners
+    scroll: true
     link: "#partners"
+  - text: Pre-Register
+    link: "https://hacker.hackthevalley.io"
 
 about:
   headingText: About
@@ -171,7 +177,7 @@ partners:
     <ul class="nav__items">
       {% for nav_item in page.nav %}
         <li class="nav__item">
-          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link" href="{{ nav_item.link }}">{{ nav_item.text }}</a>
+          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link {% if nav_item.scroll %} scroll {% endif %}" href="{{ nav_item.link }}">{{ nav_item.text }}</a>
         </li>
       {% endfor %}
     </ul>
