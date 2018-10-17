@@ -30,6 +30,8 @@
     
       <li class="nav__item"><a href="#partners">Partners</a></li>
     
+      <li class="nav__item"><a href="https://hacker.hackthevalley.io">Pre-Register</a></li>
+    
   </ul>
 </nav> -->
 
@@ -38,19 +40,23 @@
     <ul class="nav__items">
       
         <li class="nav__item">
-          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link" href="#about">About</a>
+          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link  scroll " href="#about">About</a>
         </li>
       
         <li class="nav__item">
-          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link" href="#faq">FAQs</a>
+          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link  scroll " href="#faq">FAQs</a>
         </li>
       
         <li class="nav__item">
-          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link" href="#sponsors">Sponsors</a>
+          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link  scroll " href="#sponsors">Sponsors</a>
         </li>
       
         <li class="nav__item">
-          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link" href="#partners">Partners</a>
+          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link  scroll " href="#partners">Partners</a>
+        </li>
+      
+        <li class="nav__item">
+          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link " href="https://hacker.hackthevalley.io">Pre-Register</a>
         </li>
       
     </ul>
@@ -619,8 +625,8 @@
     }
   }
 
-  Array.from(document.querySelectorAll(".nav__item-link")).forEach(el => {
-    el.addEventListener("click", scrollTo);
+  Array.from(document.querySelectorAll(".scroll")).forEach(el => {
+      el.addEventListener("click", scrollTo);
   })
 </script>
 </body>
