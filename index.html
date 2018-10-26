@@ -20,6 +20,7 @@ nav:
     scroll: true
     link: "#partners"
   - text: Pre-Register
+    modifier: register
     link: "https://hacker.hackthevalley.io"
 
 about:
@@ -87,68 +88,69 @@ faq:
         backgroundColor: "green"
 sponsors:
   headingText: Sponsors
-  logos:
-    - alt: FDM Group
-      src: /uploads/fdm-logo.png
-      href: https://www.fdmgroup.com/
-      width: 250px
+  types:
+    - type: bronze
+      logos:
+        - alt: FDM Group
+          src: /uploads/fdm-logo.png
+          href: https://www.fdmgroup.com/
+          width: 300px
 
-    - alt: Rogers
-      src: /uploads/rogers-logo.png
-      href: https://www.rogers.com/
-      width: 280px
-      break: true
+        - alt: Rogers
+          src: /uploads/rogers-logo.png
+          href: https://www.rogers.com/
+          width: 320px
+    - type: regular
+      logos:
+        - alt: Coinberry
+          src: /uploads/coinberry-logo.png
+          href: https://coinberry.com
+          width: 180px
 
-    - alt: Coinberry
-      src: /uploads/coinberry-logo.png
-      href: https://coinberry.com
-      width: 150px
+        - alt: .tech Domains
+          src: /uploads/tech-domains-logo.png
+          href: https://get.tech
+          width: 130px
+        
+        - alt: Indico
+          src: /uploads/indico-logo.png
+          href: https://getindico.io
+          width: 130px
 
-    - alt: .tech Domains
-      src: /uploads/tech-domains-logo.png
-      href: https://get.tech
-      width: 100px
-    
-    - alt: Indico
-      src: /uploads/indico-logo.png
-      href: https://getindico.io
-      width: 100px
+        - alt: Hasura
+          src: /uploads/hasura.svg
+          href: https://hasura.io/
+          width: 170px
 
-    - alt: Hasura
-      src: /uploads/hasura.svg
-      href: https://hasura.io/
-      width: 140px
+        - alt: JetBrains
+          src: /uploads/jetbrains.png
+          href: https://www.jetbrains.com/
+          width: 100px
 
-    - alt: JetBrains
-      src: /uploads/jetbrains.png
-      href: https://www.jetbrains.com/
-      width: 70px
+        - alt: Red Bull
+          src: /uploads/redbull.png
+          href: https://www.redbull.com/ca-en/
+          width: 130px
 
-    - alt: Red Bull
-      src: /uploads/redbull.png
-      href: https://www.redbull.com/ca-en/
-      width: 100px
+        - alt: Red Bull
+          src: /uploads/balsamiq.png
+          href: https://balsamiq.com/
+          width: 150px
 
-    - alt: Red Bull
-      src: /uploads/balsamiq.png
-      href: https://balsamiq.com/
-      width: 120px
+        - alt: Google
+          src: /uploads/google.png
+          href: https://google.ca
+          width: 160px
 
+        - alt: Product Hunt
+          src: /uploads/producthunt.svg
+          href: https://www.producthunt.com/
+          width: 170px
 
-    - alt: Google
-      src: /uploads/google.png
-      href: https://google.ca
-      width: 130px
-
-    - alt: Product Hunt
-      src: /uploads/producthunt.svg
-      href: https://www.producthunt.com/
-      width: 140px
-
-    - alt: EA
-      src: /uploads/ea.png
-      href: https://www.ea.com/en-ca
-      width: 70px
+        - alt: EA
+          src: /uploads/ea.png
+          href: https://www.ea.com/en-ca
+          width: 100px
 
 partners:
   headingText: Partners
@@ -156,28 +158,24 @@ partners:
     - alt: FEM in STEM
       src: /uploads/feminstem-logo.png
       href: https://www.feminstem.com/
-      width: 200px
+      width: 120px
     - alt: Omicron
       src: /uploads/omicron.png
       href: http://omcn.tech/
-      width: 170px
+      width: 110px
 ---
-
-<!-- <nav id="nav" class="nav">
-  <ul class="nav__list">
-    <li class="nav__toggle" onclick="toggleNavigation()"><i class="fa fa-angle-down" aria-hidden="true"></i></li>
-    {% for nav_item in page.nav %}
-      <li class="nav__item"><a href="{{ nav_item.link }}">{{ nav_item.text }}</a></li>
-    {% endfor %}
-  </ul>
-</nav> -->
-
 <nav id="nav" class="nav">
   <div class="nav__wrapper">
     <ul class="nav__items">
       {% for nav_item in page.nav %}
-        <li class="nav__item">
-          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link {% if nav_item.scroll %} scroll {% endif %}" href="{{ nav_item.link }}">{{ nav_item.text }}</a>
+        <li class="nav__item{% if nav_item.modifier %} nav__item--{{ nav_item.modifier }}{% endif %}">
+          <a
+            onclick="toggleNavigation(false); scrollTo(this)"
+            class="nav__item-link{% if nav_item.scroll %} scroll{% endif %}"
+            href="{{ nav_item.link }}"
+          >{{
+            nav_item.text
+          }}</a>
         </li>
       {% endfor %}
     </ul>
@@ -310,8 +308,9 @@ partners:
     <h2 class="htv__header sponsors__heading">{{
       page.sponsors.headingText
     }}</h2>
-    <div class="sponsors__container">
-      {% for logo in page.sponsors.logos %}
+    {% for item in page.sponsors.types %}
+      <div class="sponsors__container sponsors__container--{{ item.type }}">
+      {% for logo in item.logos %}
         <a
           class="sponsors__link"
           href="{{ logo.href }}?utm_source=hackthevalleyio&utm_medium=referral&utm_campaign=htv3"
@@ -326,12 +325,9 @@ partners:
             height="{{ logo.height }}"
           />
         </a>
-
-        {% if logo.break %}
-        <div style="width: 100%;"></div>
-        {% endif %}
       {% endfor %}
-    </div>
+      </div>
+    {% endfor %}
     <div class="htv__leaf--fade faq__leaf faq__leaf--0">
       <svg class="htv__leaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.31 222.44">
         <path d="M425.8,56.89l.47-1.1-.42,1Z" />
