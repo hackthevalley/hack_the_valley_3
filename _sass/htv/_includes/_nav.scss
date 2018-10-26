@@ -25,7 +25,8 @@
 
   &__items {
     display: flex;
-    margin: 0 auto 0 -30px;
+    margin: 0;
+    width: 100%;
     list-style-type: none;
     align-items: center;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
@@ -34,6 +35,22 @@
   &__item {
     margin: 15px 25px;
     padding: 5px;
+    &--register {
+      transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+      margin: 5px 8px 5px auto;
+      border: 2px solid white;
+      border-radius: 4px;
+      padding: 8px 15px;
+      &:hover {
+        background-color: rgba(255,255,255,0.1);
+      }
+      #{ $self }--active & {
+        border-color: #3a3a3a;
+        &:hover {
+          background-color: rgba(0,0,0,0.07);
+        }
+      }
+    }
   }
 
   &__item-link {
