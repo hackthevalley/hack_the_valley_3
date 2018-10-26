@@ -393,13 +393,26 @@ table {
     margin: auto; }
   .nav__items {
     display: flex;
-    margin: 0 auto 0 -30px;
+    margin: 0;
+    width: 100%;
     list-style-type: none;
     align-items: center;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; }
   .nav__item {
     margin: 15px 25px;
     padding: 5px; }
+    .nav__item--register {
+      transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+      margin: 5px 8px 5px auto;
+      border: 2px solid white;
+      border-radius: 4px;
+      padding: 8px 15px; }
+      .nav__item--register:hover {
+        background-color: rgba(255, 255, 255, 0.1); }
+      .nav--active .nav__item--register {
+        border-color: #3a3a3a; }
+        .nav--active .nav__item--register:hover {
+          background-color: rgba(0, 0, 0, 0.07); }
   .nav__item-link:visited, .nav__item-link:link, .nav__item-link:active {
     color: inherit;
     text-decoration: none; }
@@ -771,11 +784,15 @@ table {
 .sponsors__link {
   display: inline-block;
   text-align: center;
-  margin: 30px;
-  width: calc(33% - 60px);
+  margin: 20px;
+  width: calc(20% - 40px);
   transition: 0.2s ease-out transform; }
   .sponsors__link:hover {
     transform: scale(1.15) translate3d(0, 0, 0); }
+  .sponsors__container--bronze .sponsors__link {
+    width: calc(50% - 40px); }
+  .sponsors__container--regular .sponsors__link {
+    width: calc(33% - 40px); }
 @keyframes sponsors__fade {
   from {
     opacity: 0;
@@ -793,11 +810,26 @@ table {
     opacity: 1;
     transform: translate3d(0, 0, 0); } }
 @media screen and (max-width: 800px) {
-  .sponsors__link {
+  .sponsors__container {
+    margin-bottom: 80px; }
+    .sponsors__container:last-child {
+      margin-bottom: 0; }
+  .sponsors__container--bronze .sponsors__link {
+    width: calc(80% - 60px); }
+  .sponsors__container--regular .sponsors__link {
     width: calc(50% - 60px); } }
 @media screen and (max-width: 600px) {
+  .sponsors__container {
+    flex-direction: column;
+    margin-bottom: 40px; }
+    .sponsors__container:last-child {
+      margin-bottom: 0; }
+  .sponsors__logo {
+    width: 60%; }
+    .sponsors__container--bronze .sponsors__logo {
+      width: 100%; }
   .sponsors__link {
-    width: calc(100% - 60px); }
+    width: calc(100% - 60px) !important; }
   .sponsors__leaf--0 {
     width: 140px;
     top: 20px;

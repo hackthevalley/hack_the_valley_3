@@ -18,45 +18,48 @@
     <meta name="keywords" content="hackathon, programming, computer science, student, university, toronto, hack the valley, hack valley, utsc, uoft">
     <link rel="stylesheet" href="/assets/main.css?v=4">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /></head><body><main id="htv" class="htv" aria-label="Content">
-      <!-- <nav id="nav" class="nav">
-  <ul class="nav__list">
-    <li class="nav__toggle" onclick="toggleNavigation()"><i class="fa fa-angle-down" aria-hidden="true"></i></li>
-    
-      <li class="nav__item"><a href="#about">About</a></li>
-    
-      <li class="nav__item"><a href="#faq">FAQs</a></li>
-    
-      <li class="nav__item"><a href="#sponsors">Sponsors</a></li>
-    
-      <li class="nav__item"><a href="#partners">Partners</a></li>
-    
-      <li class="nav__item"><a href="https://hacker.hackthevalley.io">Pre-Register</a></li>
-    
-  </ul>
-</nav> -->
-
-<nav id="nav" class="nav">
+      <nav id="nav" class="nav">
   <div class="nav__wrapper">
     <ul class="nav__items">
       
         <li class="nav__item">
-          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link  scroll " href="#about">About</a>
+          <a
+            onclick="toggleNavigation(false); scrollTo(this)"
+            class="nav__item-link scroll"
+            href="#about"
+          >About</a>
         </li>
       
         <li class="nav__item">
-          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link  scroll " href="#faq">FAQs</a>
+          <a
+            onclick="toggleNavigation(false); scrollTo(this)"
+            class="nav__item-link scroll"
+            href="#faq"
+          >FAQs</a>
         </li>
       
         <li class="nav__item">
-          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link  scroll " href="#sponsors">Sponsors</a>
+          <a
+            onclick="toggleNavigation(false); scrollTo(this)"
+            class="nav__item-link scroll"
+            href="#sponsors"
+          >Sponsors</a>
         </li>
       
         <li class="nav__item">
-          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link  scroll " href="#partners">Partners</a>
+          <a
+            onclick="toggleNavigation(false); scrollTo(this)"
+            class="nav__item-link scroll"
+            href="#partners"
+          >Partners</a>
         </li>
       
-        <li class="nav__item">
-          <a onclick="toggleNavigation(false); scrollTo(this)" class="nav__item-link " href="https://hacker.hackthevalley.io">Pre-Register</a>
+        <li class="nav__item nav__item--register">
+          <a
+            onclick="toggleNavigation(false); scrollTo(this)"
+            class="nav__item-link"
+            href="https://hacker.hackthevalley.io"
+          >Pre-Register</a>
         </li>
       
     </ul>
@@ -227,7 +230,8 @@
 <section id="sponsors" class="sponsors htv__section">
   <div class="htv__content">
     <h2 class="htv__header sponsors__heading">Sponsors</h2>
-    <div class="sponsors__container">
+    
+      <div class="sponsors__container sponsors__container--bronze">
       
         <a
           class="sponsors__link"
@@ -239,12 +243,10 @@
             class="sponsors__logo"
             src="/uploads/fdm-logo.png"
             alt="FDM Group"
-            width="250px"
+            width="300px"
             height=""
           />
         </a>
-
-        
       
         <a
           class="sponsors__link"
@@ -256,14 +258,14 @@
             class="sponsors__logo"
             src="/uploads/rogers-logo.png"
             alt="Rogers"
-            width="280px"
+            width="320px"
             height=""
           />
         </a>
-
-        
-        <div style="width: 100%;"></div>
-        
+      
+      </div>
+    
+      <div class="sponsors__container sponsors__container--regular">
       
         <a
           class="sponsors__link"
@@ -275,12 +277,10 @@
             class="sponsors__logo"
             src="/uploads/coinberry-logo.png"
             alt="Coinberry"
-            width="150px"
+            width="180px"
             height=""
           />
         </a>
-
-        
       
         <a
           class="sponsors__link"
@@ -292,12 +292,10 @@
             class="sponsors__logo"
             src="/uploads/tech-domains-logo.png"
             alt=".tech Domains"
-            width="100px"
+            width="130px"
             height=""
           />
         </a>
-
-        
       
         <a
           class="sponsors__link"
@@ -309,12 +307,10 @@
             class="sponsors__logo"
             src="/uploads/indico-logo.png"
             alt="Indico"
-            width="100px"
+            width="130px"
             height=""
           />
         </a>
-
-        
       
         <a
           class="sponsors__link"
@@ -326,12 +322,10 @@
             class="sponsors__logo"
             src="/uploads/hasura.svg"
             alt="Hasura"
-            width="140px"
+            width="170px"
             height=""
           />
         </a>
-
-        
       
         <a
           class="sponsors__link"
@@ -343,12 +337,10 @@
             class="sponsors__logo"
             src="/uploads/jetbrains.png"
             alt="JetBrains"
-            width="70px"
+            width="100px"
             height=""
           />
         </a>
-
-        
       
         <a
           class="sponsors__link"
@@ -360,12 +352,10 @@
             class="sponsors__logo"
             src="/uploads/redbull.png"
             alt="Red Bull"
-            width="100px"
+            width="130px"
             height=""
           />
         </a>
-
-        
       
         <a
           class="sponsors__link"
@@ -377,12 +367,10 @@
             class="sponsors__logo"
             src="/uploads/balsamiq.png"
             alt="Red Bull"
-            width="120px"
+            width="150px"
             height=""
           />
         </a>
-
-        
       
         <a
           class="sponsors__link"
@@ -394,12 +382,10 @@
             class="sponsors__logo"
             src="/uploads/google.png"
             alt="Google"
-            width="130px"
+            width="160px"
             height=""
           />
         </a>
-
-        
       
         <a
           class="sponsors__link"
@@ -411,12 +397,10 @@
             class="sponsors__logo"
             src="/uploads/producthunt.svg"
             alt="Product Hunt"
-            width="140px"
+            width="170px"
             height=""
           />
         </a>
-
-        
       
         <a
           class="sponsors__link"
@@ -428,14 +412,13 @@
             class="sponsors__logo"
             src="/uploads/ea.png"
             alt="EA"
-            width="70px"
+            width="100px"
             height=""
           />
         </a>
-
-        
       
-    </div>
+      </div>
+    
     <div class="htv__leaf--fade faq__leaf faq__leaf--0">
       <svg class="htv__leaf" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568.31 222.44">
         <path d="M425.8,56.89l.47-1.1-.42,1Z" />
@@ -466,7 +449,7 @@
             class="sponsors__logo"
             src="/uploads/feminstem-logo.png"
             alt="FEM in STEM"
-            width="200px"
+            width="120px"
             height=""
           />
         </a>
@@ -483,7 +466,7 @@
             class="sponsors__logo"
             src="/uploads/omicron.png"
             alt="Omicron"
-            width="170px"
+            width="110px"
             height=""
           />
         </a>
@@ -537,8 +520,8 @@
   const curve = newArray.map((i, key) => normalcdf(key));
 
   // JS solution for logos (because safari :c)
-  const loadLogos = () => {
-    const logos = document.querySelectorAll("#sponsors .sponsors__link");
+  const loadLogos = id => {
+    const logos = document.querySelectorAll(`#${id} .sponsors__link`);
     Array.from(logos).map(({ style }, i) => {
       style.animation = `sponsors__fade 0.8s ease-in-out ${i * 0.2}s backwards`
     })
@@ -550,8 +533,11 @@
     items = items.filter(item => {
       if (item.top <= top + diff && !item.target.classList.contains("htv__section--show")) {
         item.target.classList.add("htv__section--show");
-        if (item.target.id === "sponsors") {
-          loadLogos();
+        const id = item.target.id;
+        switch(id) {
+          case "sponsors":
+          case "partners":
+            loadLogos(id); break;
         }
       } else {
         return item;
