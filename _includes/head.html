@@ -1,23 +1,41 @@
 <head>
-    <title>{{ site.title }}</title>
-    <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" rel="stylesheet">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="favicon.ico">
-    <meta property="og:title" content="{{ site.title }}">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.evernote.com/l/Aq0uGMJY8NVEL7ZEh1M21q3to61X4I477mQB/image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://www.evernote.com/l/Aq0uGMJY8NVEL7ZEh1M21q3to61X4I477mQB/image.png">
-    <meta property="og:site_name" content="{{ site.title }}">
-    <meta property="og:description" content="{{ site.description }}">
-    <meta name="copyright" content="{{ site.copyright }}">
-    <meta name="description" content="{{ site.description }}">
-    <meta name="keywords" content="hackathon, programming, computer science, student, university, toronto, hack the valley, hack valley, utsc, uoft">
-    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}?v={{ site.version }}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-    {%- if jekyll.environment == 'production' and site.google_analytics -%}
-      {%- include google-analytics.html -%}
-    {%- endif -%}
+  <title>{{ site.title }}</title>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <meta property="og:title" content="{{ site.title }}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.evernote.com/l/Aq0uGMJY8NVEL7ZEh1M21q3to61X4I477mQB/image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.evernote.com/l/Aq0uGMJY8NVEL7ZEh1M21q3to61X4I477mQB/image.png">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta name="copyright" content="{{ site.copyright }}">
+  <meta name="description" content="{{ site.description }}">
+  <meta name="keywords"
+        content="hackathon, programming, computer science, student, university, toronto, hack the valley, hack valley, utsc, uoft">
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}?v={{ site.version }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <!-- Sentry error reporting -->
+  <script src="https://browser.sentry-cdn.com/4.3.2/bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    console.log("Running in {{ jekyll.environment }}");
+    Sentry.init({
+      dsn: 'https://3750e64bc7044aa69f3a3a22a4c39ef1@sentry.io/1324991',
+      environment: "{{ jekyll.environment }}"
+    });
+  </script>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129321549-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-129321549-1');
+  </script>
 </head>
