@@ -421,7 +421,6 @@ table {
     z-index: 4;
     width: 30px;
     cursor: pointer;
-    margin-left: auto;
     flex-direction: column; }
   .nav__bar {
     width: 100%;
@@ -465,7 +464,7 @@ table {
     background-color: white;
     box-sizing: border-box;
     position: absolute;
-    align-items: flex-end;
+    align-items: flex-start;
     flex-direction: column;
     z-index: -1;
     pointer-events: none;

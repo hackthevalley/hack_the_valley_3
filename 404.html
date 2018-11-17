@@ -1,23 +1,45 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-    <title>Hack the Valley 3</title>
-    <meta charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" rel="stylesheet">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="favicon.ico">
-    <meta property="og:title" content="Hack the Valley 3">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.evernote.com/l/Aq0uGMJY8NVEL7ZEh1M21q3to61X4I477mQB/image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://www.evernote.com/l/Aq0uGMJY8NVEL7ZEh1M21q3to61X4I477mQB/image.png">
-    <meta property="og:site_name" content="Hack the Valley 3">
-    <meta property="og:description" content="UofT Scarborough is hosting a 36h Hackathon from February 22nd to 24th, 2019. Get your hands on some of the top hardware and API's out there and put your creativity to the test!">
-    <meta name="copyright" content="Copyright Hack the Valley 2018">
-    <meta name="description" content="UofT Scarborough is hosting a 36h Hackathon from February 22nd to 24th, 2019. Get your hands on some of the top hardware and API's out there and put your creativity to the test!">
-    <meta name="keywords" content="hackathon, programming, computer science, student, university, toronto, hack the valley, hack valley, utsc, uoft">
-    <link rel="stylesheet" href="/assets/main.css?v=4">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /></head><body><main id="htv" class="htv" aria-label="Content">
+  <title>Hack the Valley 3</title>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700,900" rel="stylesheet">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <meta property="og:title" content="Hack the Valley 3">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.evernote.com/l/Aq0uGMJY8NVEL7ZEh1M21q3to61X4I477mQB/image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.evernote.com/l/Aq0uGMJY8NVEL7ZEh1M21q3to61X4I477mQB/image.png">
+  <meta property="og:site_name" content="Hack the Valley 3">
+  <meta property="og:description" content="UofT Scarborough is hosting a 36h Hackathon from February 22nd to 24th, 2019. Get your hands on some of the top hardware and API's out there and put your creativity to the test!">
+  <meta name="copyright" content="Copyright Hack the Valley 2018">
+  <meta name="description" content="UofT Scarborough is hosting a 36h Hackathon from February 22nd to 24th, 2019. Get your hands on some of the top hardware and API's out there and put your creativity to the test!">
+  <meta name="keywords"
+        content="hackathon, programming, computer science, student, university, toronto, hack the valley, hack valley, utsc, uoft">
+  <link rel="stylesheet" href="/assets/main.css?v=4">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+  <!-- Sentry error reporting -->
+  <script src="https://browser.sentry-cdn.com/4.3.2/bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    console.log("Running in production");
+    Sentry.init({
+      dsn: 'https://3750e64bc7044aa69f3a3a22a4c39ef1@sentry.io/1324991',
+      environment: "production"
+    });
+  </script>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-129321549-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-129321549-1');
+  </script>
+</head><body><main id="htv" class="htv" aria-label="Content">
       <style type="text/css" media="screen">
   .container {
     margin: 10px auto;
@@ -39,7 +61,9 @@
   <p>The requested page could not be found.</p>
 </div>
 
-    </main><footer class="site-footer h-card">
+    </main><a id="mlh-trust-badge" style="display:block;max-width:100px;min-width:60px;position:fixed;right:50px;top:0;width:10%;z-index:10000" href="https://mlh.io/seasons/na-2019/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2019-season&utm_content=white" target="_blank"><img src="https://s3.amazonaws.com/logged-assets/trust-badge/2019/mlh-trust-badge-2019-white.svg" alt="Major League Hacking 2019 Hackathon Season" style="width:100%"></a>
+
+<footer class="site-footer h-card">
   <data class="u-url" href="/"></data>
 
   <div class="wrapper">
@@ -87,6 +111,7 @@
         switch(id) {
           case "sponsors":
           case "partners":
+          case "startups":
             loadLogos(id); break;
         }
       } else {
