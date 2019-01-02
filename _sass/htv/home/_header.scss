@@ -5,6 +5,29 @@
   padding: 8 * $spacing-unit 0 8 * $spacing-unit;
   display: flex;
 
+  &__apply-button {
+    &,
+    &:link,
+    &:visited,
+    &:active {
+      color: white;
+      background-color: transparent;
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 25px;
+      border-left: white 3px solid;
+      padding-left: 15px;
+      opacity: 0.7;
+      text-decoration: none;
+      transition: all ease 0.5s;
+      &:hover {
+        opacity: 1;
+        padding-left: 20px;
+        transition: all ease 0.5s;
+      }
+    }
+  }
+
   &__content { z-index: 1 }
 
   &__title {
@@ -43,8 +66,8 @@
     }
     &--1 {
       fill: #C79F59;
-      top: 280px;
-      left: 30px;
+      top: 340px;
+      left: 70px;
       width: 160px;
     }
     &--2 {
@@ -139,7 +162,7 @@
         & > * { transform: rotate(-20deg) }
       }
       &--1 {
-        top: 180px;
+        top: 250px;
         left: 40px;
         width: 120px;
       }
@@ -156,6 +179,19 @@
   .header {
     padding: 4 * $spacing-unit 0 4 * $spacing-unit;
     text-align: center;
+    &__apply-button {
+      &,
+      &:link,
+      &:visited,
+      &:active {
+        border: none;
+        padding: 0;
+        margin-top: 40px;
+        &:hover {
+          padding: 0;
+        }
+      }
+    }
     &__title {
       font-size: 2rem;
       line-height: 2rem;
