@@ -692,6 +692,10 @@ table {
     width: 140px;
     top: calc(100% - 80px);
     left: calc(100% - 160px); } }
+.faq a:link,
+.faq a:visited {
+  color: white;
+  text-decoration: underline; }
 .faq__items {
   display: flex; }
 .faq__column {
