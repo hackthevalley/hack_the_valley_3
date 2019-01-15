@@ -571,7 +571,8 @@ table {
     right: 0;
     bottom: 0;
     left: 0;
-    margin: auto; }
+    margin: auto;
+    opacity: 0.5; }
 
 .htv__section--show .header__title {
   animation: header__title 0.8s ease-in-out 0s backwards; }
