@@ -863,3 +863,10 @@ table {
     width: 140px;
     top: calc(100% - 80px);
     left: calc(100% - 160px); } }
+#schedule {
+  text-align: center; }
+  #schedule iframe {
+    border: none;
+    min-height: 100vh;
+    width: 90%;
+    max-width: 1100px; }
