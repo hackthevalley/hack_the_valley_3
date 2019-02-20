@@ -27,7 +27,7 @@ github_username: hackthevalley
 
 # Build settings
 markdown: kramdown
-version: 9
+version: 10
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
